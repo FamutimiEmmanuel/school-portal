@@ -1,0 +1,4 @@
+{
+     "mongoURI": "mongodb+srv://library:integrity1212@contactkeeper.b8vrz.mongodb.net/?retryWrites=true&w=majority",
+     "jwtsecret": "secret"
+ }

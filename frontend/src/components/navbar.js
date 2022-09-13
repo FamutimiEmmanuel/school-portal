@@ -15,7 +15,7 @@ function NavBar() {
             <Nav.Link href="#pricing">About Us</Nav.Link>
             <NavDropdown title="Activities" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
-                Inter-House Sport
+                Payments
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.2">Summer lesson</NavDropdown.Item>
@@ -23,11 +23,15 @@ function NavBar() {
               <NavDropdown.Item href="#action/3.3">
                 Cultural Display
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.3">
+              Inter-House Sport
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Student Login</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link href="/studentlogin">Student Login</Nav.Link>
+            <Nav.Link eventKey={2} href="/stafflogin">
               Staff Login
             </Nav.Link>
           </Nav>

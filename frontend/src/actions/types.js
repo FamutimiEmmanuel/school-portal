@@ -16,6 +16,7 @@ export const CLEAR_FILTER = 'CLEAR_FILTER';
 export const CLEAR_STUDENTS = 'CLEAR_STUDENTS';
 export const CLEAR_STAFFS = 'CLEAR_STAFFS';
 export const SET_ALERT = 'SET_ALERT';
+export const SET_LOADING = 'SET_LOADING';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
 export const STUDENT_ERROR = 'STUDENT_ERROR';
 export const STAFF_ERROR = 'STAFF_ERROR';

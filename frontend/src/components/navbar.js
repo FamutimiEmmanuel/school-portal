@@ -30,9 +30,12 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="/studentlogin">Student Login</Nav.Link>
+            <Nav.Link href="/studentlogin">Student</Nav.Link>
             <Nav.Link eventKey={2} href="/stafflogin">
-              Staff Login
+              Staff
+            </Nav.Link>
+            <Nav.Link eventKey={3} href="/adminlogin">
+              Admin
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

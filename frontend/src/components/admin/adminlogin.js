@@ -3,25 +3,17 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-function Staffregister() {
+function Adminlogin() {
   return (
     <div>
-    <h3 className="mt-4 text-primary">Staff Register</h3>
+    <h3 className="mt-4 text-primary">Admin</h3>
     <Form>
-      <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalName">
+      <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalAdminId">
         <Form.Label column sm={2}>
-          Name
+          Admin ID
         </Form.Label>
         <Col sm={4}>
-          <Form.Control type="name" placeholder="Name" />
-        </Col>
-      </Form.Group>
-      <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalEmail">
-        <Form.Label column sm={2}>
-          Email
-        </Form.Label>
-        <Col sm={4}>
-          <Form.Control type="email" placeholder="Email" />
+          <Form.Control type="adminid" placeholder="Admin ID" />
         </Col>
       </Form.Group>
 
@@ -36,7 +28,7 @@ function Staffregister() {
 
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 3, offset: 1 }}>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Sign in</Button>
         </Col>
       </Form.Group>
     </Form>
@@ -44,4 +36,4 @@ function Staffregister() {
   );
 }
 
-export default Staffregister;
+export default Adminlogin;

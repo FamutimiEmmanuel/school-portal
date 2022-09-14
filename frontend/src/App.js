@@ -9,6 +9,7 @@ import Studentlogin from "./components/student/studentlogin";
 import Studentregister from "./components/student/studentregister";
 import Stafflogin from "./components/staff/stafflogin";
 import Staffregister from "./components/staff/staffregister";
+import Adminlogin from "./components/admin/adminlogin";
 import Home from "./components/home";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,7 @@ function App() {
       <Route path="/studentlogin" element={<Studentlogin />}></Route>
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
+      <Route path="/adminlogin" element={<Adminlogin />}></Route>
     </Routes>
     </BrowserRouter>
     </div>

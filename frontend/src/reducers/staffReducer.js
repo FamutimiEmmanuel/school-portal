@@ -140,7 +140,7 @@ import {
                                   case STAFF_ERROR:
                                     return {
                                       ...state,
-                                      action.payload,
+                                     ...action.payload,
                                   
                                     };
                         

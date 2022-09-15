@@ -33,6 +33,14 @@ function Staffregister() {
           <Form.Control type="password" placeholder="Password" />
         </Col>
       </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalImage">
+        <Form.Label column sm={2}>
+          Upload Image
+        </Form.Label>
+        <Col sm={2}>
+        <input name="Select File" type="file" />
+        </Col>
+      </Form.Group>
 
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 3, offset: 1 }}>

@@ -140,7 +140,7 @@ const initialState = {
                                   case STAFF_ERROR:
                                     return {
                                       ...state,
-                                      action.payload,
+                                     ...action.payload,
                                   
                                     };
                         

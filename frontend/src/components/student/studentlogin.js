@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 // import { Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
-import { login, setAlert } from '../../actions/studentActions';
+import { studentLogin, setAlert } from '../../actions/studentActions';
 
 
 function Studentlogin() {
@@ -18,14 +18,14 @@ function Studentlogin() {
     if (email === '' || password === '') {
       setAlert('please input a valid email and password', 'danger')
     } else {
-      const studentLogin = {
+      const studentLoginDetails = {
         email,
         password,
       };
 
-      console.log(studentLogin);
+      console.log(studentLoginDetails);
 
-      login(studentLogin);
+      studentLogin(studentLoginDetails);
 
       setAlert('login successful', 'success')
 
@@ -70,9 +70,8 @@ function Studentlogin() {
   );
 }
 
-// export default Studentlogin;
 
 export default connect(
   null,
-  { login, setAlert }
+  { studentLogin, setAlert }
 )(Studentlogin);

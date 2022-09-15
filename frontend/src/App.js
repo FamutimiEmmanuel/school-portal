@@ -22,8 +22,9 @@ import store from './store';
 function App() {
   return (
     <Provider store={store}>
-    {/* <div className="App px-2"> */}
+    
     <Fragment>
+      <div className="App px-2">
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />}></Route>
@@ -36,8 +37,9 @@ function App() {
       <Route path="/adminlogin" element={<Adminlogin />}></Route>
     </Routes>
     </BrowserRouter>
+       </div>
     </Fragment>
-    {/* </div> */}
+ 
     </Provider>
   );
 }

@@ -26,7 +26,7 @@ import {
  
  
 
-  export  const register = async (Data) => async dispatch => {
+  export  const studentRegister = async (Data) => async dispatch => {
     const config = {
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ import {
     }
   };
 
-  export const login = async (Data) => async dispatch => {
+  export const studentLogin = async (Data) => async dispatch => {
     const config = {
       headers: {
         'Content-Type': 'application/json'

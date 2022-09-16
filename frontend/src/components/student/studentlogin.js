@@ -14,7 +14,8 @@ function Studentlogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     if (email === '' || password === '') {
       setAlert('please input a valid email and password', 'danger')
     } else {

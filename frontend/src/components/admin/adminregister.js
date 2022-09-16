@@ -4,33 +4,31 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { connect } from 'react-redux';
-import { staffRegister, setAlert } from '../../actions/staffActions';
+import { adminRegister, setAlert } from '../../actions/adminActions';
 
-function Staffregister() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+function Adminregister() {
+  const [adminid, setAdminId] = useState('');
   const [password, setPassword] = useState('');
   const [image, setImage] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (email === '' || password === '') {
-      setAlert('please input a valid email and password', 'danger')
+    if (adminid === '' || password === '') {
+      setAlert('please input a valid ID and password', 'danger')
     } else {
-      const staffRegisterDetails = {
-        name,
-        email,
+      const adminRegisterDetails = {
+        adminid,
         password,
         image
       };
 
-      console.log(staffRegisterDetails);
+      console.log(adminRegisterDetails);
 
-      staffRegister(staffRegisterDetails);
+      adminRegister(adminRegisterDetails);
 
       setAlert('Register success', 'success')
 
-      setEmail('');
+      setAdminId('');
       setPassword('');
      
     }
@@ -38,27 +36,17 @@ function Staffregister() {
 
   return (
     <div>
-    <h3 className="mt-4 text-primary">Staff Register</h3>
+    <h3 className="mt-4 text-primary">Admin Register</h3>
     <Form onSubmit={onSubmit}>
       <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalName">
         <Form.Label column sm={2}>
-          Name
+          AdminID
         </Form.Label>
         <Col sm={4}>
-        <Form.Control type="name" name="name" placeholder="Name" value={name}
-              onChange={e => setName(e.target.value)}/>
+        <Form.Control type="adminid" name="adminid" placeholder="AdminID" value={adminid}
+              onChange={e => setAdminId(e.target.value)}/>
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalEmail">
-        <Form.Label column sm={2}>
-          Email
-        </Form.Label>
-        <Col sm={4}>
-        <Form.Control type="email" name="email" placeholder="Email" value={email}
-              onChange={e => setEmail(e.target.value)}/>
-        </Col>
-      </Form.Group>
-
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
         <Form.Label column sm={2}>
           Password
@@ -90,5 +78,5 @@ function Staffregister() {
 
 export default connect(
   null,
-  { staffRegister, setAlert }
-)(Staffregister);
+  { adminRegister, setAlert }
+)(Adminregister);

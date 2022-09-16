@@ -1,6 +1,6 @@
+import { connect } from 'react-redux';
 
-
-function Studentprofile() {
+const Studentprofile = () => {
   return (
     <div>
        <div>Image : </div>
@@ -40,4 +40,12 @@ function Studentprofile() {
   );
 }
 
-export default Studentprofile;
+
+const mapStateToProps = state => ({
+  student: state.student
+});
+
+export default connect(
+  mapStateToProps,
+  { }
+)(Studentprofile);

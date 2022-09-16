@@ -15,7 +15,7 @@ function NavBar() {
             <Nav.Link href="#pricing">About Us</Nav.Link>
             <NavDropdown title="Activities" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
-                Payments
+               <a href="https://buy.stripe.com/test_cN26rIfhy4kDfV66oo">Payments</a>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.2">Summer lesson</NavDropdown.Item>

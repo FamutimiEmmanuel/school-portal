@@ -14,7 +14,9 @@ function Studentregister() {
   const [password, setPassword] = useState('');
   const [image, setImage] = useState('');
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+
+    e.preventDefault();
     if (email === '' || password === '') {
       setAlert('please input a valid email and password', 'danger')
     } else {

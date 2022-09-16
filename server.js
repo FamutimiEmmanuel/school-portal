@@ -13,6 +13,7 @@ app.get('/', (req, res) => res.json({ msg: 'Welcome to the school portal'}));
 app.use(require('./routes/auth'))
 app.use(require('./routes/staffs'))
 app.use(require('./routes/students'))
+app.use(require('./routes/admin'))
 
 const PORT = process.env.PORT || 5000;
 

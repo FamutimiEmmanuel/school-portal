@@ -3,10 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { staffRegister, setAlert } from '../../actions/staffActions';
 
-function Staffregister() {
+const Staffregister = ({staffRegister}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -87,6 +88,9 @@ function Staffregister() {
   );
 }
 
+Staffregister.propTypes = {
+  staffRegister: PropTypes.func.isRequired
+};
 
 export default connect(
   null,

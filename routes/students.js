@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const Student = require('../models/Students');
 
-router.post('/api/student/register', 
+router.post('/api/students/register', 
  [
    check('name', 'please add name').not().isEmpty(),
    check('studentid', 'please enter a valid studentid').not().isEmpty(),

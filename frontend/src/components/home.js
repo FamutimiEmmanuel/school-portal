@@ -12,7 +12,7 @@ function Home() {
     <div style={{height:""}}>
     <Header/>
     <Mission/>
-    <Button variant="primary"><a href="https://buy.stripe.com/test_cN26rIfhy4kDfV66oo" class="btn btn-primary mb">Payments</a></Button>
+    <Button variant="primary"><a href="https://buy.stripe.com/test_cN26rIfhy4kDfV66oo" className="btn btn-primary mb">Payments</a></Button>
     <Authors/>
     </div>
    

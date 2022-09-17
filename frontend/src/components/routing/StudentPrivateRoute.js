@@ -16,6 +16,15 @@ const StudentPrivateRoute = ({ student:{isAuthenticated} ,element: Component, ..
     );
 };
 
+// const StudentPrivateRoute = ({ student:{isAuthenticated}}) => {
+    
+//     if(isAuthenticated) {
+//          return <Navigate to="/studentprofile" state={{ student:isAuthenticated}}/>
+//     } else {
+//         return <Navigate tp="/studentlogin" state={{ student:isAuthenticated}}/>
+//     }
+// }
+
 
 const mapStateToProps = state => ({
     student: state.student

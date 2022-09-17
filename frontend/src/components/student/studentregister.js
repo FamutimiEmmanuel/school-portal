@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { connect } from 'react-redux';
 import { studentRegister, setAlert } from '../../actions/studentActions';
 
-function Studentregister() {
+const Studentregister = ({studentRegister}) => {
 
   const [name, setName] = useState('');
   const [studentid, setStudentID] = useState('');
@@ -100,6 +100,10 @@ function Studentregister() {
   );
 }
 
+
+// Studentregister.propTypes = {
+//   studentRegister: PropTypes.func.isRequired
+// };
 
 export default connect(
   null,

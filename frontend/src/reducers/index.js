@@ -8,3 +8,4 @@ export default combineReducers({
   student: studentReducer,
   admin:adminReducer
 });
+

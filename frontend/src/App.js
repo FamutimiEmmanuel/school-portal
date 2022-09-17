@@ -25,28 +25,48 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 
+
 function App() {
   return (
-    <Provider store={store}>
-    
+    <Provider store={store}>   
     <Fragment>
       <div className="App px-2">
-    <BrowserRouter>
-    {/* <StudentPrivateRoute path="/studentprofile" element={<Studentprofile />} />
-      <StaffPrivateRoute path="/staffprofile" element={<Staffprofile />} />
-       <AdminPrivateRoute path="/adminprofile" element={<Adminprofile />} /> */}
-    
+    <BrowserRouter>   
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/studentregister" element={<Studentregister />}></Route>
       <Route path="/studentlogin" element={<Studentlogin />}></Route>
+      <Route
+                        path="/studentprofile"
+                        element={
+                            <StudentPrivateRoute>
+                                <Studentprofile />
+                            </StudentPrivateRoute>
+                        }
+                    ></Route>
       
      
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
+      <Route
+                        path="/staffprofile"
+                        element={
+                            <StaffPrivateRoute>
+                                <Staffprofile />
+                            </StaffPrivateRoute>
+                        }
+                    ></Route>
      
       <Route path="/adminlogin" element={<Adminlogin />}></Route>
       <Route path="/adminregister" element={<Adminregister />}></Route>
+      <Route
+                        path="/adminprofile"
+                        element={
+                            <AdminPrivateRoute>
+                                <Adminprofile />
+                            </AdminPrivateRoute>
+                        }
+                    ></Route>
      
     </Routes>
     </BrowserRouter>

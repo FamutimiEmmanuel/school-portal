@@ -9,12 +9,14 @@ import {
 import Studentlogin from "./components/student/studentlogin";
 import Studentregister from "./components/student/studentregister";
 import Studentprofile from "./components/student/studentprofile";
+import StudentState from './context/student/StudentState';
 import Stafflogin from "./components/staff/stafflogin";
 import Staffregister from "./components/staff/staffregister";
 import Staffprofile from "./components/staff/staffprofile";
 import Adminlogin from "./components/admin/adminlogin";
 import Adminprofile from "./components/admin/adminprofile";
 import Adminregister from './components/admin/adminregister';
+import AdminState from './context/admin/AdminState';
 import StudentPrivateRoute from './components/routing/StudentPrivateRoute';
 import StaffPrivateRoute from './components/routing/StaffPrivateRoute';
 import StaffState from './context/staff/StaffState';
@@ -33,6 +35,8 @@ if(localStorage.token) {
 function App() {
   return (
     <StaffState>
+      <StudentState>
+        <AdminState>
     <Provider store={store}>   
     <Fragment>
       <div className="App px-2">
@@ -53,15 +57,14 @@ function App() {
      
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
-      <Route path="/staffprofile" element={<Staffprofile />}></Route>
-      {/* <Route
+      <Route
                         path="/staffprofile"
                         element={
                             <StaffPrivateRoute>
                                 <Staffprofile />
                             </StaffPrivateRoute>
                         }
-                    ></Route> */}
+                    ></Route>
      
       <Route path="/adminlogin" element={<Adminlogin />}></Route>
       <Route path="/adminregister" element={<Adminregister />}></Route>
@@ -80,6 +83,8 @@ function App() {
     </Fragment>
  
     </Provider>
+    </AdminState>
+    </StudentState>
     </StaffState>
   );
 }

@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+// import {Navigate} from 'react-router-dom'
+import React, { useState, useContext } from 'react';
+import staffContext from '../../context/staff/staffContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
-import { staffRegister, setAlert } from '../../actions/staffActions';
+// import PropTypes from 'prop-types'
+// import { connect } from 'react-redux';
+// import { staffRegister, setAlert } from '../../actions/staffActions';
 
-const Staffregister = ({staffRegister}) => {
+const Staffregister = (props) => {
+  const StaffContext = useContext(staffContext);
+
+  const { staffRegister } = StaffContext;
+
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +23,7 @@ const Staffregister = ({staffRegister}) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === '' || password === '') {
-      setAlert('please input a valid email and password', 'danger')
+      // setAlert('please input a valid email and password', 'danger')
     } else {
       const staffRegisterDetails = {
         name,
@@ -29,12 +36,14 @@ const Staffregister = ({staffRegister}) => {
 
       staffRegister(staffRegisterDetails);
 
-      setAlert('Register success', 'success')
+      // setAlert('Register success', 'success')
 
       setEmail('');
       setPassword('');
      
     }
+    // <Navigate to='/staffprofile'/>
+    // props.history.push('/staffprofile');
   };
 
   return (
@@ -88,11 +97,13 @@ const Staffregister = ({staffRegister}) => {
   );
 }
 
-Staffregister.propTypes = {
-  staffRegister: PropTypes.func.isRequired
-};
+// Staffregister.propTypes = {
+//   staffRegister: PropTypes.func.isRequired
+// };
 
-export default connect(
-  null,
-  { staffRegister, setAlert }
-)(Staffregister);
+// export default connect(
+//   null,
+//   { staffRegister, setAlert }
+// )(Staffregister);
+
+export default Staffregister;

@@ -17,17 +17,22 @@ import Adminprofile from "./components/admin/adminprofile";
 import Adminregister from './components/admin/adminregister';
 import StudentPrivateRoute from './components/routing/StudentPrivateRoute';
 import StaffPrivateRoute from './components/routing/StaffPrivateRoute';
+import StaffState from './context/staff/StaffState';
 import AdminPrivateRoute from './components/routing/AdminPrivateRoute';
+import setAuthToken from './utils/setAuthToken';
 import Home from "./components/home";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import store from './store';
 
-
+if(localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 function App() {
   return (
+    <StaffState>
     <Provider store={store}>   
     <Fragment>
       <div className="App px-2">
@@ -48,14 +53,15 @@ function App() {
      
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
-      <Route
+      <Route path="/staffprofile" element={<Staffprofile />}></Route>
+      {/* <Route
                         path="/staffprofile"
                         element={
                             <StaffPrivateRoute>
                                 <Staffprofile />
                             </StaffPrivateRoute>
                         }
-                    ></Route>
+                    ></Route> */}
      
       <Route path="/adminlogin" element={<Adminlogin />}></Route>
       <Route path="/adminregister" element={<Adminregister />}></Route>
@@ -74,6 +80,7 @@ function App() {
     </Fragment>
  
     </Provider>
+    </StaffState>
   );
 }
 

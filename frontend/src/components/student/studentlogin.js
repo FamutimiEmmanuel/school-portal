@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import studentContext from '../../context/student/studentContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 // import { Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { connect } from 'react-redux';
-import { studentLogin, setAlert } from '../../actions/studentActions';
+// import { connect } from 'react-redux';
+// import { studentLogin, setAlert } from '../../actions/studentActions';
 
 
-function Studentlogin() {
+const Studentlogin = () => {
+
+  const StudentContext = useContext(studentContext);
+
+  const { studentLogin } = StudentContext;
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +22,7 @@ function Studentlogin() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === '' || password === '') {
-      setAlert('please input a valid email and password', 'danger')
+      // setAlert('please input a valid email and password', 'danger')
     } else {
       const studentLoginDetails = {
         email,
@@ -28,7 +33,7 @@ function Studentlogin() {
 
       studentLogin(studentLoginDetails);
 
-      setAlert('login successful', 'success')
+      // setAlert('login successful', 'success')
 
       setEmail('');
       setPassword('');
@@ -72,7 +77,9 @@ function Studentlogin() {
 }
 
 
-export default connect(
-  null,
-  { studentLogin, setAlert }
-)(Studentlogin);
+// export default connect(
+//   null,
+//   { studentLogin, setAlert }
+// )(Studentlogin);
+
+export default Studentlogin;

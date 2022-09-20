@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import staffContext from '../../context/staff/staffContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { connect } from 'react-redux';
-import { staffLogin, setAlert } from '../../actions/staffActions';
+// import { connect } from 'react-redux';
+// import { staffLogin, setAlert } from '../../actions/staffActions';
 
-function Stafflogin() {
+const Stafflogin = (props) => {
+  const StaffContext = useContext(staffContext);
+
+  const { staffLogin } = StaffContext;
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +18,7 @@ function Stafflogin() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === '' || password === '') {
-      setAlert('please input a valid email and password', 'danger')
+      // setAlert('please input a valid email and password', 'danger')
     } else {
       const staffLoginDetails = {
         email,
@@ -25,7 +29,7 @@ function Stafflogin() {
 
       staffLogin(staffLoginDetails);
 
-      setAlert('login successful', 'success')
+      // setAlert('login successful', 'success')
 
       setEmail('');
       setPassword('');
@@ -67,7 +71,9 @@ function Stafflogin() {
   );
 }
 
-export default connect(
-  null,
-  { staffLogin, setAlert }
-)(Stafflogin);
+// export default connect(
+//   null,
+//   { staffLogin, setAlert }
+// )(Stafflogin);
+
+export default Stafflogin;

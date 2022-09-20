@@ -44,7 +44,7 @@ import {
             type: REGISTER_SUCCESS,
             payload: res.data
           });
-          getAdmin();
+          // getAdmin();
         } catch (err) {
           dispatch({
             type: REGISTER_FAIL,

@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import adminContext from '../../context/admin/adminContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { connect } from 'react-redux';
-import { adminLogin, setAlert } from '../../actions/adminActions';
+// import { connect } from 'react-redux';
+// import { adminLogin, setAlert } from '../../actions/adminActions';
 
-function Adminlogin() {
+const Adminlogin = (props) => {
+
+  const AdminContext = useContext(adminContext);
+
+  const { adminLogin } = AdminContext;
 
   const [adminid, setAdminId] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +19,7 @@ function Adminlogin() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (adminid === '' || password === '') {
-      setAlert('please input a valid ID and password', 'danger')
+      // setAlert('please input a valid ID and password', 'danger')
     } else {
       const adminLoginDetails = {
         adminid,
@@ -25,7 +30,7 @@ function Adminlogin() {
 
       adminLogin(adminLoginDetails);
 
-      setAlert('Register success', 'success')
+      // setAlert('Register success', 'success')
 
       setAdminId('');
       setPassword('');
@@ -69,7 +74,9 @@ function Adminlogin() {
 }
 
 
-export default connect(
-  null,
-  { adminLogin, setAlert }
-)(Adminlogin);
+// export default connect(
+//   null,
+//   { adminLogin, setAlert }
+// )(Adminlogin);
+
+export default Adminlogin;

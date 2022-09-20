@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import adminContext from '../../context/admin/adminContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { connect } from 'react-redux';
-import { adminRegister, setAlert } from '../../actions/adminActions';
+// import { connect } from 'react-redux';
+// import { adminRegister, setAlert } from '../../actions/adminActions';
 
-function Adminregister() {
+const Adminregister = (props) => {
+
+  const AdminContext = useContext(adminContext);
+
+  const { adminRegister } = AdminContext;
+
   const [adminid, setAdminId] = useState('');
   const [password, setPassword] = useState('');
   const [image, setImage] = useState('');
@@ -14,7 +20,7 @@ function Adminregister() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (adminid === '' || password === '') {
-      setAlert('please input a valid ID and password', 'danger')
+      // setAlert('please input a valid ID and password', 'danger')
     } else {
       const adminRegisterDetails = {
         adminid,
@@ -26,7 +32,7 @@ function Adminregister() {
 
       adminRegister(adminRegisterDetails);
 
-      setAlert('Register success', 'success')
+      // setAlert('Register success', 'success')
 
       setAdminId('');
       setPassword('');
@@ -76,7 +82,9 @@ function Adminregister() {
 }
 
 
-export default connect(
-  null,
-  { adminRegister, setAlert }
-)(Adminregister);
+// export default connect(
+//   null,
+//   { adminRegister, setAlert }
+// )(Adminregister);
+
+export default Adminregister;

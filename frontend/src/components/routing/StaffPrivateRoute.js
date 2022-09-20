@@ -1,7 +1,13 @@
 import { Route, Navigate } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
+import staffContext from '../../context/staff/staffContext';
+// import { connect } from 'react-redux';
 
-const StaffPrivateRoute = ({ staff:{isAuthenticated} ,element: Component, ...rest }) => {
+const StaffPrivateRoute = ({ element: Component, ...rest }) => {
+
+    const StaffContext = useContext(staffContext);
+
+    const { isAuthenticated } = StaffContext;
  
     
     return (
@@ -17,11 +23,13 @@ const StaffPrivateRoute = ({ staff:{isAuthenticated} ,element: Component, ...res
 };
 
 
-const mapStateToProps = state => ({
-    staff: state.staff
-  });
+// const mapStateToProps = state => ({
+//     staff: state.staff
+//   });
   
-  export default connect(
-    mapStateToProps,
-    { }
-  )(StaffPrivateRoute);
+//   export default connect(
+//     mapStateToProps,
+//     { }
+//   )(StaffPrivateRoute);
+
+  export default StaffPrivateRoute;

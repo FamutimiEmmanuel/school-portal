@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import studentContext from '../../context/student/studentContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { connect } from 'react-redux';
-import { studentRegister, setAlert } from '../../actions/studentActions';
+// import { connect } from 'react-redux';
+// import { studentRegister, setAlert } from '../../actions/studentActions';
 
-const Studentregister = ({studentRegister}) => {
+const Studentregister = (props) => {
+
+  const StudentContext = useContext(studentContext);
+
+  const { studentRegister } = StudentContext;
 
   const [name, setName] = useState('');
   const [studentid, setStudentID] = useState('');
@@ -18,7 +23,7 @@ const Studentregister = ({studentRegister}) => {
 
     e.preventDefault();
     if (email === '' || password === '') {
-      setAlert('please input a valid email and password', 'danger')
+      // setAlert('please input a valid email and password', 'danger')
     } else {
       const studentRegisterDetails = {
         name,
@@ -32,7 +37,7 @@ const Studentregister = ({studentRegister}) => {
 
       studentRegister(studentRegisterDetails);
 
-      setAlert('Register success', 'success')
+      // setAlert('Register success', 'success')
 
       setEmail('');
       setPassword('');
@@ -105,7 +110,9 @@ const Studentregister = ({studentRegister}) => {
 //   studentRegister: PropTypes.func.isRequired
 // };
 
-export default connect(
-  null,
-  { studentRegister, setAlert }
-)(Studentregister);
+// export default connect(
+//   null,
+//   { studentRegister, setAlert }
+// )(Studentregister);
+
+export default Studentregister;

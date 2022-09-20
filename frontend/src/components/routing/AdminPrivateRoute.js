@@ -1,7 +1,13 @@
 import { Route, Navigate } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
+import adminContext from '../../context/admin/adminContext';
+// import { connect } from 'react-redux';
 
-const AdminPrivateRoute = ({ admin:{isAuthenticated} ,element: Component, ...rest }) => {
+const AdminPrivateRoute = ({ element: Component, ...rest }) => {
+
+    const AdminContext = useContext(adminContext);
+
+  const { isAuthenticated } = AdminContext;
  
     
     return (
@@ -17,11 +23,13 @@ const AdminPrivateRoute = ({ admin:{isAuthenticated} ,element: Component, ...res
 };
 
 
-const mapStateToProps = state => ({
-    admin: state.admin
-  });
+// const mapStateToProps = state => ({
+//     admin: state.admin
+//   });
   
-  export default connect(
-    mapStateToProps,
-    { }
-  )(AdminPrivateRoute);
+//   export default connect(
+//     mapStateToProps,
+//     { }
+//   )(AdminPrivateRoute);
+
+  export default AdminPrivateRoute;

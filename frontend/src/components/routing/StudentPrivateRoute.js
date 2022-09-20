@@ -1,9 +1,13 @@
 import { Route, Navigate } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
+import studentContext from '../../context/student/studentContext';
+// import { connect } from 'react-redux';
 
-const StudentPrivateRoute = ({ student:{isAuthenticated} ,element: Component, ...rest }) => {
+const StudentPrivateRoute = ({ element: Component, ...rest }) => {
  
-    
+    const StudentContext = useContext(studentContext);
+
+    const { isAuthenticated } = StudentContext;
     return (
         <Route
             {...rest}
@@ -16,21 +20,16 @@ const StudentPrivateRoute = ({ student:{isAuthenticated} ,element: Component, ..
     );
 };
 
-// const StudentPrivateRoute = ({ student:{isAuthenticated}}) => {
-    
-//     if(isAuthenticated) {
-//          return <Navigate to="/studentprofile" state={{ student:isAuthenticated}}/>
-//     } else {
-//         return <Navigate tp="/studentlogin" state={{ student:isAuthenticated}}/>
-//     }
-// }
 
 
-const mapStateToProps = state => ({
-    student: state.student
-  });
+
+// const mapStateToProps = state => ({
+//     student: state.student
+//   });
   
-  export default connect(
-    mapStateToProps,
-    { }
-  )(StudentPrivateRoute);
+//   export default connect(
+//     mapStateToProps,
+//     { }
+//   )(StudentPrivateRoute);
+
+  export default StudentPrivateRoute;

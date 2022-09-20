@@ -25,8 +25,8 @@ import setAuthToken from './utils/setAuthToken';
 import Home from "./components/home";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Provider } from 'react-redux';
-import store from './store';
+// import { Provider } from 'react-redux';
+// import store from './store';
 
 if(localStorage.token) {
   setAuthToken(localStorage.token);
@@ -37,7 +37,7 @@ function App() {
     <StaffState>
       <StudentState>
         <AdminState>
-    <Provider store={store}>   
+    {/* <Provider store={store}>    */}
     <Fragment>
       <div className="App px-2">
     <BrowserRouter>   
@@ -82,7 +82,7 @@ function App() {
        </div>
     </Fragment>
  
-    </Provider>
+    {/* </Provider> */}
     </AdminState>
     </StudentState>
     </StaffState>

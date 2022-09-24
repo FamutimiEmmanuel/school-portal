@@ -57,7 +57,7 @@ import {
             type: REGISTER_SUCCESS,
             payload: res.data
           });
-          getStudents();
+          // getStudents();
         } catch (err) {
           dispatch({
             type: REGISTER_FAIL,
@@ -83,7 +83,7 @@ import {
             type: LOGIN_SUCCESS,
             payload: res.data
           });
-          getStudents();
+          // getStudents();
         } catch (err) {
           dispatch({
             type: LOGIN_FAIL,
@@ -98,7 +98,7 @@ import {
        const getStudents = async () =>  {
         try {
       
-          const res = await axios.get('http://localhost:5000/api/stuents');
+          const res = await axios.get('http://localhost:5000/api/students');
       
           dispatch({
             type: GET_STUDENTS,

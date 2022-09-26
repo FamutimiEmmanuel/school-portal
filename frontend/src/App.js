@@ -57,14 +57,15 @@ function App() {
      
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
-      <Route
+      <Route path="/staffprofile" element={<Staffprofile />}></Route>
+      {/* <Route
                         path="/staffprofile"
                         element={
                             <StaffPrivateRoute>
                                 <Staffprofile />
                             </StaffPrivateRoute>
                         }
-                    ></Route>
+                    ></Route> */}
      
       <Route path="/adminlogin" element={<Adminlogin />}></Route>
       <Route path="/adminregister" element={<Adminregister />}></Route>

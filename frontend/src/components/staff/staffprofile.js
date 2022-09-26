@@ -1,6 +1,18 @@
+// import React, { useEffect, useContext } from 'react';
 import { Button } from "react-bootstrap";
+// import staffContext from '../../context/staff/staffContext';
 
 function Staffprofile() {
+  // const StaffContext = useContext(staffContext);
+
+  // const { getStaffs } = StaffContext;
+
+
+  // useEffect(() => {
+  //   getStaffs()
+  // },)
+
+  
     return (
       <div>
          <div>Image : </div>

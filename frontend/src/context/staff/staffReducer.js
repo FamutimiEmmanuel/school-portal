@@ -74,6 +74,7 @@ import {
                         case GET_STAFFS:
                           return {
                               ...state,
+                              isAuthenticated: true,
                               staff: action.payload,
                               loading: false
                           };

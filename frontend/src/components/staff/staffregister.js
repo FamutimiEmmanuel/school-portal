@@ -1,5 +1,6 @@
 // import {Navigate} from 'react-router-dom'
 import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 import staffContext from '../../context/staff/staffContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -12,7 +13,7 @@ import Row from 'react-bootstrap/Row';
 const Staffregister = (props) => {
   const StaffContext = useContext(staffContext);
 
-  const { staffRegister } = StaffContext;
+  const { staffRegister, isAuthenticated } = StaffContext;
 
 
   const [name, setName] = useState('');
@@ -46,6 +47,7 @@ const Staffregister = (props) => {
     // props.history.push('/staffprofile');
   };
 
+  if (isAuthenticated) return <Navigate to='/staffprofile' />;
   return (
     <div>
     <h3 className="mt-4 text-primary">Staff Register</h3>

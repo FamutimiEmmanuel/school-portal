@@ -58,16 +58,14 @@ import {
             type: REGISTER_SUCCESS,
             payload: res.data
           });
-          // getStaffs();
+          getStaffs();
         } catch (err) {
           dispatch({
             type: REGISTER_FAIL,
             payload: err.response.data.msg
           });
         }
-        if(state.token) {
-            setAuthToken(state.token);
-          }
+       
       };
 
       const staffLogin = async (Data) =>  {
@@ -98,9 +96,13 @@ import {
  
  
        const getStaffs = async() =>  {
+
+        if(localStorage.token) {
+          setAuthToken(localStorage.token);
+        }
         try {
       
-          const res = await axios.get('http://localhost:5000/api/staffs');
+          const res = await axios.get('http://localhost:5000/api/staffauth');
       
           dispatch({
             type: GET_STAFFS,

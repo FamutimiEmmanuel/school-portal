@@ -4,9 +4,22 @@ const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const auth = require('../middleware/auth');
 const Staff = require('../models/Staffs');  
 const Student = require('../models/Students');  
 const Admin = require('../models/Admin');  
+
+
+
+router.get('/api/staffauth', auth, async (req, res) => {
+  try {
+    const staff = await Staff.findById(req.staff.id).select('-password');
+    res.json(staff);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 router.post('/api/student/login',
 [

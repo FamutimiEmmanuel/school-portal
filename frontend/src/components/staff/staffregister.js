@@ -45,9 +45,12 @@ const Staffregister = (props) => {
     }
     // <Navigate to='/staffprofile'/>
     // props.history.push('/staffprofile');
+    
+  if (isAuthenticated) return <Navigate to='/staffprofile' />;
+  
   };
 
-  if (isAuthenticated) return <Navigate to='/staffprofile' />;
+ 
   return (
     <div>
     <h3 className="mt-4 text-primary">Staff Register</h3>

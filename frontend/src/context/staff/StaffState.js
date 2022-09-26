@@ -65,6 +65,7 @@ import {
             payload: err.response.data.msg
           });
         }
+      
        
       };
 
@@ -89,9 +90,6 @@ import {
             payload: err.response.data.msg
           });
         }
-        if(state.token) {
-            setAuthToken(state.token);
-          }
       };
  
  

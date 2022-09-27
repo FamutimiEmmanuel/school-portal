@@ -77,7 +77,7 @@ import {
         }
     
         try {
-          const res = await axios.post('http://localhost:5000/api/staffs/login',Data,config);
+          const res = await axios.post('http://localhost:5000/api/staff/login',Data,config);
     
           dispatch({
             type: LOGIN_SUCCESS,

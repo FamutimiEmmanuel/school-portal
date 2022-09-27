@@ -64,9 +64,6 @@ import {
             payload: err.response.data.msg
           });
         }
-        if(state.token) {
-            setAuthToken(state.token);
-          }
       };
     
      const studentLogin = async (Data) =>  {
@@ -77,7 +74,7 @@ import {
         }
     
         try {
-          const res = await axios.post('http://localhost:5000/api/students/login',Data,config);
+          const res = await axios.post('http://localhost:5000/api/student/login',Data,config);
     
           dispatch({
             type: LOGIN_SUCCESS,
@@ -90,9 +87,7 @@ import {
             payload: err.response.data.msg
           });
         }
-        if(state.token) {
-            setAuthToken(state.token);
-          }
+        
       };
      
       const getStudents = async() =>  {

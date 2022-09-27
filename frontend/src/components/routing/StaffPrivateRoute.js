@@ -1,35 +1,20 @@
-import { Route, Navigate } from 'react-router-dom';
+import {  Navigate } from 'react-router-dom';
 import React, { useContext } from 'react';
 import staffContext from '../../context/staff/staffContext';
 // import { connect } from 'react-redux';
 
-const StaffPrivateRoute = ({ element: Component, ...rest }) => {
+const StaffPrivateRoute = ({ component: Component }) => {
 
     const StaffContext = useContext(staffContext);
 
     const { isAuthenticated } = StaffContext;
+
+    if (isAuthenticated) return <Component />;
+    return <Navigate to='/stafflogin' />;
  
     
-    return (
-        <Route
-            {...rest}
-            render={props => 
-                !isAuthenticated ? 
-                (<Navigate to='/stafflogin'/>) :
-                 (<Component {...props}/>)
-            }
-        />
-    );
+   
 };
 
-
-// const mapStateToProps = state => ({
-//     staff: state.staff
-//   });
-  
-//   export default connect(
-//     mapStateToProps,
-//     { }
-//   )(StaffPrivateRoute);
 
   export default StaffPrivateRoute;

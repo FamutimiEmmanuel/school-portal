@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 import adminContext from '../../context/admin/adminContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -11,7 +12,7 @@ const Adminlogin = (props) => {
 
   const AdminContext = useContext(adminContext);
 
-  const { adminLogin } = AdminContext;
+  const { adminLogin, isAuthenticated } = AdminContext;
 
   const [adminid, setAdminId] = useState('');
   const [password, setPassword] = useState('');
@@ -37,6 +38,8 @@ const Adminlogin = (props) => {
      
     }
   };
+
+  if (isAuthenticated) return <Navigate to='/staffprofile' />;
 
   return (
     <div>

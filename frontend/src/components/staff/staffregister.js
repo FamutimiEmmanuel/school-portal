@@ -39,16 +39,16 @@ const Staffregister = (props) => {
 
       // setAlert('Register success', 'success')
 
+      setName('');
       setEmail('');
       setPassword('');
      
     }
-    // <Navigate to='/staffprofile'/>
-    // props.history.push('/staffprofile');
-    
-  if (isAuthenticated) return <Navigate to='/staffprofile' />;
+
   
   };
+
+  if (isAuthenticated) return <Navigate to='/staffprofile' />;
 
  
   return (
@@ -97,18 +97,12 @@ const Staffregister = (props) => {
           <Button type="submit">Submit</Button>
         </Col>
       </Form.Group>
+      {isAuthenticated ? <h6>you are registered</h6> : <h6> register here</h6>}
     </Form>
     </div>
   );
 }
 
-// Staffregister.propTypes = {
-//   staffRegister: PropTypes.func.isRequired
-// };
 
-// export default connect(
-//   null,
-//   { staffRegister, setAlert }
-// )(Staffregister);
 
 export default Staffregister;

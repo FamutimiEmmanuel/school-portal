@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 import studentContext from '../../context/student/studentContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -11,7 +12,7 @@ const Studentregister = (props) => {
 
   const StudentContext = useContext(studentContext);
 
-  const { studentRegister } = StudentContext;
+  const { studentRegister, isAuthenticated } = StudentContext;
 
   const [name, setName] = useState('');
   const [studentid, setStudentID] = useState('');
@@ -39,11 +40,14 @@ const Studentregister = (props) => {
 
       // setAlert('Register success', 'success')
 
+      setName('');
       setEmail('');
       setPassword('');
      
     }
   };
+
+  if (isAuthenticated) return <Navigate to='/staffprofile' />;
 
   return (
     <div>

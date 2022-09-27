@@ -44,16 +44,13 @@ import {
             type: REGISTER_SUCCESS,
             payload: res.data
           });
-          // getAdmin();
+          getAdmin();
         } catch (err) {
           dispatch({
             type: REGISTER_FAIL,
             payload: err.response.data.msg
           });
         }
-        if(state.token) {
-            setAuthToken(state.token);
-          }
       };
     
      const adminLogin = async (Data) =>  {
@@ -77,15 +74,16 @@ import {
             payload: err.response.data.msg
           });
         }
-        if(state.token) {
-            setAuthToken(state.token);
-          }
       };
      
-     const getAdmin = async () =>  {
+      const getAdmin = async() =>  {
+
+        if(localStorage.token) {
+          setAuthToken(localStorage.token);
+        }
         try {
       
-          const res = await axios.get('http://localhost:5000/api/admin');
+          const res = await axios.get('http://localhost:5000/api/adminauth');
       
           dispatch({
             type: GET_ADMIN,

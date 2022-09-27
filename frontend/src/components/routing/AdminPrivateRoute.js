@@ -1,35 +1,20 @@
-import { Route, Navigate } from 'react-router-dom';
+import {  Navigate } from 'react-router-dom';
 import React, { useContext } from 'react';
 import adminContext from '../../context/admin/adminContext';
 // import { connect } from 'react-redux';
 
-const AdminPrivateRoute = ({ element: Component, ...rest }) => {
+const AdminPrivateRoute = ({ component: Component }) => {
 
     const AdminContext = useContext(adminContext);
 
-  const { isAuthenticated } = AdminContext;
+    const { isAuthenticated } = AdminContext;
+
+    if (isAuthenticated) return <Component />;
+    return <Navigate to='/adminlogin' />;
  
     
-    return (
-        <Route
-            {...rest}
-            render={props => 
-                !isAuthenticated ? 
-                (<Navigate to='/adminlogin'/>) :
-                 (<Component {...props}/>)
-            }
-        />
-    );
+   
 };
 
-
-// const mapStateToProps = state => ({
-//     admin: state.admin
-//   });
-  
-//   export default connect(
-//     mapStateToProps,
-//     { }
-//   )(AdminPrivateRoute);
 
   export default AdminPrivateRoute;

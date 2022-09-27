@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const Staff = require('../models/Staffs');
 const Student = require('../models/Students');
-const auth = require('../middleware/auth');
 
 router.post('/api/staff/register', 
  [

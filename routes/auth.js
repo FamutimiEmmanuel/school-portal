@@ -4,17 +4,38 @@ const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-const auth = require('../middleware/auth');
+const adminauth = require('../middleware/adminauth');
+const staffauth = require('../middleware/staffauth');
+const studentauth = require('../middleware/studentauth');
 const Staff = require('../models/Staffs');  
 const Student = require('../models/Students');  
 const Admin = require('../models/Admin');  
 
 
 
-router.get('/api/staffauth', auth, async (req, res) => {
+router.get('/api/adminauth', adminauth, async (req, res) => {
+  try {
+    const admin = await Admin.findById(req.admin.id).select('-password');
+    res.json(admin);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+router.get('/api/staffauth', staffauth, async (req, res) => {
   try {
     const staff = await Staff.findById(req.staff.id).select('-password');
     res.json(staff);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.get('/api/studentauth', studentauth, async (req, res) => {
+  try {
+    const student = await Student.findById(req.student.id).select('-password');
+    res.json(student);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');

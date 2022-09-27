@@ -45,38 +45,16 @@ function App() {
       <Route path="/" element={<Home />}></Route>
       <Route path="/studentregister" element={<Studentregister />}></Route>
       <Route path="/studentlogin" element={<Studentlogin />}></Route>
-      <Route
-                        path="/studentprofile"
-                        element={
-                            <StudentPrivateRoute>
-                                <Studentprofile />
-                            </StudentPrivateRoute>
-                        }
-                    ></Route>
+      <Route path='/studentprofile' element={<StudentPrivateRoute component={Studentprofile} />} />
       
-     
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
-      <Route path="/staffprofile" element={<Staffprofile />}></Route>
-      {/* <Route
-                        path="/staffprofile"
-                        element={
-                            <StaffPrivateRoute>
-                                <Staffprofile />
-                            </StaffPrivateRoute>
-                        }
-                    ></Route> */}
+      <Route path='/staffprofile' element={<StaffPrivateRoute component={Staffprofile} />} />
+    
      
       <Route path="/adminlogin" element={<Adminlogin />}></Route>
       <Route path="/adminregister" element={<Adminregister />}></Route>
-      <Route
-                        path="/adminprofile"
-                        element={
-                            <AdminPrivateRoute>
-                                <Adminprofile />
-                            </AdminPrivateRoute>
-                        }
-                    ></Route>
+      <Route path='/adminprofile' element={<AdminPrivateRoute component={Adminprofile} />} />
      
     </Routes>
     </BrowserRouter>

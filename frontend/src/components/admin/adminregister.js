@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 import adminContext from '../../context/admin/adminContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -11,7 +12,7 @@ const Adminregister = (props) => {
 
   const AdminContext = useContext(adminContext);
 
-  const { adminRegister } = AdminContext;
+  const { adminRegister, isAuthenticated } = AdminContext;
 
   const [adminid, setAdminId] = useState('');
   const [password, setPassword] = useState('');
@@ -34,11 +35,15 @@ const Adminregister = (props) => {
 
       // setAlert('Register success', 'success')
 
+      
       setAdminId('');
       setPassword('');
      
     }
+
   };
+
+  if (isAuthenticated) return <Navigate to='/staffprofile' />;
 
   return (
     <div>

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 import studentContext from '../../context/student/studentContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -14,7 +15,7 @@ const Studentlogin = () => {
 
   const StudentContext = useContext(studentContext);
 
-  const { studentLogin } = StudentContext;
+  const { studentLogin,isAuthenticated } = StudentContext;
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,6 +42,7 @@ const Studentlogin = () => {
     }
   };
 
+  if (isAuthenticated) return <Navigate to='/staffprofile' />;
   return (
     <div>
     <h3 className="mt-4 text-primary">Student Login</h3>

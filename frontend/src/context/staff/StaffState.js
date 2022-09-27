@@ -58,7 +58,7 @@ import {
             type: REGISTER_SUCCESS,
             payload: res.data
           });
-          getStaffs();
+          // getStaffs();
         } catch (err) {
           dispatch({
             type: REGISTER_FAIL,
@@ -83,7 +83,7 @@ import {
             type: LOGIN_SUCCESS,
             payload: res.data
           });
-          getStaffs();
+          // getStaffs();
         } catch (err) {
           dispatch({
             type: LOGIN_FAIL,

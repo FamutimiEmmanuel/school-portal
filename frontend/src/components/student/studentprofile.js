@@ -1,6 +1,17 @@
 import { connect } from 'react-redux';
+import React, { useContext, useEffect } from 'react';
+import studentContext from '../../context/student/studentContext';
 
 const Studentprofile = () => {
+
+  const StudentContext = useContext(studentContext);
+
+  const { getStudents} = StudentContext;
+
+  useEffect(() => {
+    getStudents()
+  },)
+
   return (
     <div>
        <div>Image : </div>

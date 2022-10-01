@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import staffContext from '../../context/staff/staffContext';
 import Button from 'react-bootstrap/Button';
@@ -15,6 +15,10 @@ const Stafflogin = (props) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+//   useEffect(() => {
+//     if (isAuthenticated)  <Navigate to='/staffprofile' />;
+// },);
 
   const onSubmit = (e) => {
     e.preventDefault();

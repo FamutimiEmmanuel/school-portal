@@ -1,16 +1,18 @@
 // import React, { useEffect, useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Button } from "react-bootstrap";
+import staffContext from '../../context/staff/staffContext';
 // import staffContext from '../../context/staff/staffContext';
 
 function Staffprofile() {
-  // const StaffContext = useContext(staffContext);
+  const StaffContext = useContext(staffContext);
 
-  // const { getStaffs } = StaffContext;
+  const { getStaffs } = StaffContext;
 
 
-  // useEffect(() => {
-  //   getStaffs()
-  // },)
+  useEffect(() => {
+    getStaffs()
+  },)
 
   
     return (

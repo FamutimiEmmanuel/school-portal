@@ -39,7 +39,7 @@ const Adminlogin = (props) => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to='/staffprofile' />;
+  if (isAuthenticated) return <Navigate to='/adminprofile' />;
 
   return (
     <div>

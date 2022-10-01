@@ -47,7 +47,7 @@ const Studentregister = (props) => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to='/staffprofile' />;
+  if (isAuthenticated) return <Navigate to='/studentprofile' />;
 
   return (
     <div>

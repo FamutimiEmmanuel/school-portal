@@ -42,7 +42,7 @@ const Studentlogin = () => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to='/staffprofile' />;
+  if (isAuthenticated) return <Navigate to='/studentprofile' />;
   return (
     <div>
     <h3 className="mt-4 text-primary">Student Login</h3>

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React, { useContext, useEffect } from 'react';
 import studentContext from '../../context/student/studentContext';
 
-const Studentprofile = () => {
+const Studentprofile = (props) => {
 
   const StudentContext = useContext(studentContext);
 
@@ -52,11 +52,4 @@ const Studentprofile = () => {
 }
 
 
-const mapStateToProps = state => ({
-  student: state.student
-});
-
-export default connect(
-  mapStateToProps,
-  { }
-)(Studentprofile);
+export default Studentprofile;

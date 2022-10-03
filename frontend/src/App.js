@@ -23,6 +23,7 @@ import StaffState from './context/staff/StaffState';
 import AdminPrivateRoute from './components/routing/AdminPrivateRoute';
 import setAuthToken from './utils/setAuthToken';
 import Home from "./components/home";
+import Authors from "./components/authors";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Provider } from 'react-redux';
@@ -39,10 +40,11 @@ function App() {
         <AdminState>
     {/* <Provider store={store}>    */}
     <Fragment>
-      <div className="App px-2">
+      <div className="App">
     <BrowserRouter>   
     <Routes>
       <Route path="/" element={<Home />}></Route>
+      <Route path="/about" element={<Authors />}></Route>
       <Route path="/studentregister" element={<Studentregister />}></Route>
       <Route path="/studentlogin" element={<Studentlogin />}></Route>
       <Route path='/studentprofile' element={<StudentPrivateRoute component={Studentprofile} />} />

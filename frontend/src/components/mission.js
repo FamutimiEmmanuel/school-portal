@@ -2,9 +2,9 @@ import Accordion from 'react-bootstrap/Accordion';
 
 function Mission() {
   return (
-    <Accordion>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Our Mission</Accordion.Header>
+    <Accordion alwaysOpen style={{ background:'black', color:"#fff" }}>
+      <Accordion.Item eventKey="0" style={{ background:'black', color:"#fff" }}>
+        <Accordion.Header >Our Mission</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -15,7 +15,7 @@ function Mission() {
           culpa qui officia deserunt mollit anim id est laborum.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="1">
+      <Accordion.Item eventKey="1" style={{ background:'black', color:"#fff" }}>
         <Accordion.Header>Our Vision</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -27,7 +27,7 @@ function Mission() {
           culpa qui officia deserunt mollit anim id est laborum.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="2">
+      <Accordion.Item eventKey="2" style={{ background:'black', color:"#fff" }}>
         <Accordion.Header>Testimonials</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

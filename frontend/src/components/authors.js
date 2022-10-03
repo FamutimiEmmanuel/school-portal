@@ -1,8 +1,14 @@
 import sport from '../img/sport.jpg'
+import NavBar from './navbar'
+import Footer from './footer'
+
+
 const Authors = () => {
     return (
-        <section id="authors" class="my-5 text-center">
-        <div class="container">
+      
+        <section id="authors" class="text-center">
+          <NavBar/>
+        <div class="container mt-5">
           <div class="row">
             <div class="col">
               <div class="info-header mb-5">
@@ -137,7 +143,12 @@ const Authors = () => {
           </div>
        
         </div>
+        {/* <div class="mt-5">
+        <Footer/>
+        </div> */}
+      
        </section>
+    
     ) 
 }
  

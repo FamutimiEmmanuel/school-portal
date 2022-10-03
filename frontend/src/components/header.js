@@ -14,11 +14,15 @@ function Header() {
         //   src="https://unsplash.com/photos/UqTrGSohyCs"
           src={childrenreading}
           alt="First slide"
-          width={900} height={500}
+          style={{ width: '100%', height: '90vh' }}
+          // width={900} height={500}
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption  style={{ color:"#333",fontSize:"20px", fontWeight:"bold"}}>
+          <h3>School Children Reading</h3>
+          <p>Famutimi was invited to training camp with the Philadelphia 76ers and made appearances in four preseason games (4.5 ppg, 2.0 rpg) before being waived. 
+            He played 47 games for the Arkansas RimRockers in 2005–06, and averaged 6.8 points 
+            and 2.7 rebounds in 16.5 minutes per game while shooting .513 (122-238) from the field.
+         </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -27,40 +31,33 @@ function Header() {
         //   src="holder.js/800x400?text=Second slide&bg=282c34"
           src={childrenlibrary}
           alt="Second slide"
-          width={900} height={500}
+          style={{ width: '100%', height: '90vh' }}
+          // width={900} height={500}
         />
 
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <Carousel.Caption style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>
+          <h3>School Library</h3>
+          <p>Famutimi was invited to training camp with the Philadelphia 76ers and made appearances in four preseason games (4.5 ppg, 2.0 rpg) before being waived. 
+            He played 47 games for the Arkansas RimRockers in 2005–06, and averaged 6.8 points 
+            and 2.7 rebounds in 16.5 minutes per game while shooting .513 (122-238) from the field.
+         </p>
         </Carousel.Caption>
       </Carousel.Item>
-      {/* <Carousel.Item>
-        <img
-          className="d-block w-100"
-        //   src="holder.js/800x400?text=Third slide&bg=20232a"
-          src={childrenteacher}
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
       <Carousel.Item>
         <img
           className="d-block w-100"
         //   src="https://unsplash.com/photos/UqTrGSohyCs"
           src={sport}
           alt="Fourth slide"
-          width={900} height={500}
+          style={{ width: '100%', height: '90vh' }}
+          // width={900} height={500}
         />
-        <Carousel.Caption>
-          <h3>Fourth slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>
+          <h3>Sporting Activities</h3>
+          <p>Famutimi was invited to training camp with the Philadelphia 76ers and made appearances in four preseason games (4.5 ppg, 2.0 rpg) before being waived. 
+            He played 47 games for the Arkansas RimRockers in 2005–06, and averaged 6.8 points 
+            and 2.7 rebounds in 16.5 minutes per game while shooting .513 (122-238) from the field.
+         </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

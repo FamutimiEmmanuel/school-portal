@@ -42,32 +42,32 @@ const Adminlogin = (props) => {
   if (isAuthenticated) return <Navigate to='/adminprofile' />;
 
   return (
-    <div>
-    <h3 className="mt-4 text-primary">Admin Login</h3>
+    <div style={{background:'#333', height:'100vh'}}>
+    <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Admin Login</h3>
     <Form onSubmit={onSubmit}>
-      <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalAdminId">
-        <Form.Label column sm={2}>
+      <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalAdminId" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
+        {/* <Form.Label column sm={2}>
           Admin ID
-        </Form.Label>
-        <Col sm={4}>
+        </Form.Label> */}
+        <Col xs ={6} sm={6} md={4} lg={3} xl={3}>
         <Form.Control type="adminid" name="adminid" placeholder="AdminID" value={adminid}
               onChange={e => setAdminId(e.target.value)}/>
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-        <Form.Label column sm={2}>
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
+        {/* <Form.Label column sm={2}>
           Password
-        </Form.Label>
-        <Col sm={4}>
+        </Form.Label> */}
+        <Col xs ={6} sm={6} md={4} lg={3} xl={3}>
         <Form.Control type="password" name="password" placeholder="Password" value={password}
           onChange={e => setPassword(e.target.value)} />
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3">
-        <Col sm={{ span: 3, offset: 1 }}>
-          <Button type="submit">Sign in</Button>
+      <Form.Group as={Row} className="mb-3" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
+        <Col sm={{ span: 3, offset: 0 }}>
+          <Button type="submit" style={{background:'#333'}}>Sign in</Button>
         </Col>
       </Form.Group>
     </Form>

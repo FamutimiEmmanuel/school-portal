@@ -33,7 +33,7 @@ function Staffprofile() {
                   </thead>
                   <tbody>
                       <tr>
-                      <th scope="row">{}</th>
+                      <th scope="row">3</th>
                       <td>{}</td>
                       <td>{}</td>
                       <td>{}</td>

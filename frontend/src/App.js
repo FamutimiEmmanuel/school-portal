@@ -49,6 +49,7 @@ function App() {
       <Route path="/studentlogin" element={<Studentlogin />}></Route>
       <Route path='/studentprofile' element={<StudentPrivateRoute component={Studentprofile} />} />
       
+     
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
       <Route path='/staffprofile' element={<StaffPrivateRoute component={Staffprofile} />} />

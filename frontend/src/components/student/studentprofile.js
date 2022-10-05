@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React, { useContext, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
 import studentContext from '../../context/student/studentContext';
 
 const Studentprofile = (props) => {
@@ -14,7 +15,7 @@ const Studentprofile = (props) => {
 
   return (
     <div style={{background:'#333', height:'100vh', color:'#fff'}}>
-      <h1 className="pt-2" style={{justifyContent:'left',justifyItems:'left', textAlign:'left'}}>My Profile</h1>
+      <h1 className="pt-2" style={{justifyContent:'left',justifyItems:'left', textAlign:'left'}}>Welcome Emmanuel</h1>
    
     <div className='pt-5' style={{fontSize:'25px', fontWeight:'bold', justifyContent:'left',justifyItems:'left', textAlign:'left'}}>
     <div className='pt-5'>Image : </div>
@@ -81,8 +82,10 @@ const Studentprofile = (props) => {
        
        </div> 
        <div className="pt-4">
-         <h3 style={{fontSize:'25px'}}>
-         <i class='fas fa-download'  style={{fontSize:'30px', color:'green'}}></i>Download Result</h3>
+         {/* <h3 style={{fontSize:'25px'}}> */}
+         <Button type="submit" style={{background:'#333'}}><i className='fas fa-download'  style={{fontSize:'25px', color:'green'}}></i>Download Result
+       </Button>
+         {/* <i className='fas fa-download'  style={{fontSize:'30px', color:'green'}}></i>Download Result</h3> */}
          
        </div>
        

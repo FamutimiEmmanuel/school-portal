@@ -16,35 +16,28 @@ function Staffprofile() {
 
   
     return (
-      <div>
-         <div>Image : </div>
-         <div>Name : </div>
-         
-          <div> 
-            <h3>Results</h3> 
-            <table class="table">
-                  <thead>
-                      <tr>
-                      <th scope="col">S/N</th>
-                      <th scope="col">Student Name </th>
-                      <th scope="col">Course code</th>
-                      <th scope="col">Grade</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                      <th scope="row">3</th>
-                      <td>{}</td>
-                      <td>{}</td>
-                      <td>{}</td>
-                      </tr>
-                  </tbody>
-             </table>
-             <Button type="submit">Submit</Button>
-            </div> 
-            
-            
-      </div>
+      <div style={{background:'#333', height:'100vh', color:'#fff'}}>
+      <h1 className="pt-2" style={{justifyContent:'center',justifyItems:'center', textAlign:'center'}}>Welcome Emmanuel</h1>
+   
+    <div className='pt-5' style={{fontSize:'25px', fontWeight:'bold', justifyContent:'left',justifyItems:'left', textAlign:'left'}}>
+    <div className='pt-5'>Image : </div>
+    <div  className="pt-2">Name : Famutimi Emmanuel</div>
+    <div  className="pt-2"> Email: olamide.famutimi@gmail.com</div>
+    <div  className="pt-2">Level-in-charge :100l </div>
+
+       <div className="pt-5" style={{justifyContent:'center',justifyItems:'center', textAlign:'center'}}>
+       <input name="Select File" type="file" /> <br></br>
+       <Button type="submit" style={{background:'#333'}}><i className='fas fa-upload'  style={{fontSize:'25px', color:'green'}}></i>Upload Result
+       </Button>
+
+     
+      
+ 
+       </div>
+       
+ </div>
+
+ </div>
     );
   }
   

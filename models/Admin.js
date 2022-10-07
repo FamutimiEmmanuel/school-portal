@@ -10,6 +10,9 @@ const AdminSchema = mongoose.Schema({
       type: String,
       required: true
     },
+    picture: {
+      type: String
+    },
    
 });
 

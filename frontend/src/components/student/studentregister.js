@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext} from 'react';
 import { Navigate } from 'react-router-dom';
 import studentContext from '../../context/student/studentContext';
 import Button from 'react-bootstrap/Button';
@@ -14,15 +14,44 @@ const Studentregister = (props) => {
 
   const { studentRegister, isAuthenticated } = StudentContext;
 
+
+  const [image, setImage] = useState('');
+  const [url,setUrl] = useState('');
+  
+  const postPicture = ()=>{
+    const data = new FormData()
+    data.append("file",image)
+    data.append("upload_preset","insta-clone")
+    data.append("cloud_name","integrity1212")
+    fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
+        method:"post",
+        body:data
+    })
+    .then(res=>res.json())
+    .then(data=>{
+       setUrl(data.url)
+       console.log(url);
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+ 
+}
+
   const [name, setName] = useState('');
   const [studentid, setStudentID] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [image, setImage] = useState('');
+
+
+ 
 
   const onSubmit = (e) => {
 
     e.preventDefault();
+
+    postPicture();
+
     if (email === '' || password === '') {
       // setAlert('please input a valid email and password', 'danger')
     } else {
@@ -31,7 +60,7 @@ const Studentregister = (props) => {
         studentid,
         email,
         password,
-        image
+        picture:url
       };
 
       console.log(studentRegisterDetails);
@@ -47,12 +76,14 @@ const Studentregister = (props) => {
     }
   };
 
+
+
   if (isAuthenticated) return <Navigate to='/studentprofile' />;
 
   return (
     <div style={{background:'#333', height:'100vh'}}>
     <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Student Register</h3>
-    <Form onSubmit={onSubmit}>
+    <Form  onSubmit = {onSubmit}>
       <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalName" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
         {/* <Form.Label column sm={2}>
           Name
@@ -96,7 +127,8 @@ const Studentregister = (props) => {
         </Form.Label> */}
         <Col sm={{ span: 3, offset: 0 }}>
         <h4 style={{color:'#fff'}}>Upload Picture</h4>
-        <input name="Select File" type="file" value={image} onChange={e => setImage(e.target.value)} />
+        {/* <input name="Select File" type="file" value={image} onChange={(e)=>setImage(e.target.files[0])} /> */}
+        <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
         </Col>
       </Form.Group>
 

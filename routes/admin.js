@@ -17,7 +17,7 @@ router.post('/api/admin/register',
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const {adminid, password } = req.body;
+    const {adminid, password, picture } = req.body;
     try {
       let admin = await Admin.findOne({ adminid });
 
@@ -27,7 +27,8 @@ router.post('/api/admin/register',
 
       admin = new Admin({
         adminid,
-        password
+        password,
+        picture
       });
 
       const salt = await bcrypt.genSalt(10);

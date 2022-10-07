@@ -19,7 +19,7 @@ router.post('/api/students/register',
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, studentid, email, password } = req.body;
+    const { name, studentid, email, password, picture } = req.body;
     try {
       let student = await Student.findOne({ email });
 
@@ -31,7 +31,8 @@ router.post('/api/students/register',
         name,
         studentid,
         email,
-        password
+        password,
+        picture
       });
 
       const salt = await bcrypt.genSalt(10);

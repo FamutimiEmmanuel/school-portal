@@ -19,7 +19,7 @@ router.post('/api/staff/register',
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const { name, email, password, picture } = req.body;
     try {
       let staff = await Staff.findOne({ email });
 
@@ -30,7 +30,8 @@ router.post('/api/staff/register',
       staff = new Staff({
         name,
         email,
-        password
+        password,
+        picture
       });
 
       const salt = await bcrypt.genSalt(10);

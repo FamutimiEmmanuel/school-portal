@@ -15,11 +15,33 @@ const Staffregister = (props) => {
 
   const { staffRegister, isAuthenticated } = StaffContext;
 
+  const [image, setImage] = useState('');
+  const [url,setUrl] = useState('');
+  
+  const postPicture = ()=>{
+    const data = new FormData()
+    data.append("file",image)
+    data.append("upload_preset","insta-clone")
+    data.append("cloud_name","integrity1212")
+    fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
+        method:"post",
+        body:data
+    })
+    .then(res=>res.json())
+    .then(data=>{
+       setUrl(data.url)
+       console.log(url);
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+ 
+}
+
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [image, setImage] = useState('');
 
 //   useEffect(() => {
 //     if (isAuthenticated)  <Navigate to='/staffprofile' />;
@@ -27,6 +49,7 @@ const Staffregister = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    postPicture();
     if (email === '' || password === '') {
       // setAlert('please input a valid email and password', 'danger')
     } else {
@@ -34,7 +57,7 @@ const Staffregister = (props) => {
         name,
         email,
         password,
-        image
+        picture:url
       };
 
       console.log(staffRegisterDetails);
@@ -93,7 +116,7 @@ const Staffregister = (props) => {
         </Form.Label> */}
         <Col sm={{ span: 3, offset: 0 }}>
           <h4 style={{color:'#fff'}}>Upload Picture</h4>
-        <input name="upload image" type="file" value={image} onChange={e => setImage(e.target.value)} />
+          <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
         </Col>
       </Form.Group>
 

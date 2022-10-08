@@ -24,6 +24,7 @@ import AdminPrivateRoute from './components/routing/AdminPrivateRoute';
 import setAuthToken from './utils/setAuthToken';
 import Home from "./components/home";
 import Authors from "./components/authors";
+import Testing from './components/testing';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Provider } from 'react-redux';
@@ -45,6 +46,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/about" element={<Authors />}></Route>
+      <Route path="/testing" element={<Testing />}></Route>
       <Route path="/studentregister" element={<Studentregister />}></Route>
       <Route path="/studentlogin" element={<Studentlogin />}></Route>
       <Route path='/studentprofile' element={<StudentPrivateRoute component={Studentprofile} />} />

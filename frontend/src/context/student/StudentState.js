@@ -30,7 +30,7 @@ import {
 
   const StudentState = (props) => {
     const initialState = {
-        student: null,
+        student: {},
         current: null,
         token: localStorage.getItem('token'),
         isAuthenticated: null,

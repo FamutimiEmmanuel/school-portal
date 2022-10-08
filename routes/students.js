@@ -5,6 +5,7 @@ const { check, validationResult } = require('express-validator/check');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const Student = require('../models/Students');
+const studentauth = require('../middleware/studentauth');
 
 router.post('/api/students/register', 
  [
@@ -56,5 +57,8 @@ router.post('/api/students/register',
       res.status(500).send('Server Error');
     }
 });
+
+
+
 
 module.exports = router;

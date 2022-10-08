@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import React, { useContext, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import studentContext from '../../context/student/studentContext';
@@ -7,7 +7,7 @@ const Studentprofile = (props) => {
 
   const StudentContext = useContext(studentContext);
 
-  const { getStudents} = StudentContext;
+  const { getStudents, student} = StudentContext;
 
   useEffect(() => {
     getStudents()
@@ -15,12 +15,21 @@ const Studentprofile = (props) => {
 
   return (
     <div style={{background:'#333', height:'100vh', color:'#fff'}}>
-      <h1 className="pt-2" style={{justifyContent:'left',justifyItems:'left', textAlign:'left'}}>Welcome Emmanuel</h1>
+      <h1 className="pt-2" style={{justifyContent:'center',justifyItems:'center', textAlign:'center'}}>Welcome {student.name}</h1>
    
     <div className='pt-5' style={{fontSize:'25px', fontWeight:'bold', justifyContent:'left',justifyItems:'left', textAlign:'left'}}>
-    <div className='pt-5'>Image : </div>
-    <div>Name : Famutimi Emmanuel</div>
-    <div>Student ID : Den/2012/013</div>
+    {/* <div className='pt-5'>Image : </div> */}
+
+    <div className='mt-3'>
+                   <img style={{width:"160px",height:"160px",borderRadius:"80px"}} alt="profile"
+                   src={student.picture}
+                   />
+                 
+               </div>
+
+    <div className='mt-2'>Name : {student.name}</div>
+    <div>Student ID : {student.studentid}</div>
+    <div>Email : {student.email}</div>
     <div>Level :100l </div>
     <div className="pt-4"> 
        <h6 style={{fontSize:'25px',fontWeight:'bold'}}>Courses :</h6> 

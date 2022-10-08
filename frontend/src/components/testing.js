@@ -1,6 +1,4 @@
-import React, { useState, useContext, useEffect} from 'react';
-import { Navigate } from 'react-router-dom';
-import studentContext from '../../context/student/studentContext';
+import React, { useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -8,42 +6,32 @@ import Row from 'react-bootstrap/Row';
 // import { connect } from 'react-redux';
 // import { studentRegister, setAlert } from '../../actions/studentActions';
 
-const Studentregister = (props) => {
-
-  const StudentContext = useContext(studentContext);
-
-  const { studentRegister, isAuthenticated } = StudentContext;
+const Testing = (props) => {
 
 
   const [image, setImage] = useState('');
   const [url,setUrl] = useState('');
-
-
-  useEffect(()=>{
-    if(image){
-      const data = new FormData()
-      data.append("file",image)
-      data.append("upload_preset","insta-clone")
-      data.append("cloud_name","integrity1212")
-      fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
+  
+  const postPicture = ()=>{
+    const data = new FormData()
+    data.append("file",image)
+    data.append("upload_preset","insta-clone")
+    data.append("cloud_name","integrity1212")
+    fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
         method:"post",
         body:data
     })
-     .then(res=>res.json())
-     .then(data=>{
- 
-      setUrl(data.url);
-      // console.log(url);
-       
-    
-     })
-     .catch(err=>{
-         console.log(err)
-     })
-    }
- },[image,url])
-  
+    .then(res=>res.json())
+    .then(data=>{
 
+
+      console.log(data.url)
+       setUrl(data.url)
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+  }
  
 
   const [name, setName] = useState('');
@@ -58,22 +46,41 @@ const Studentregister = (props) => {
 
     e.preventDefault();
 
-    const studentRegisterDetails = {
-      name,
-      studentid,
-      email,
-      password,
-      picture:url
-    };
+    postPicture();
+    
+        const studentRegisterDetails = {
+            name,
+            studentid,
+            email,
+            password,
+            picture:url
+          };
+        console.log(studentRegisterDetails)
+    
+ };
 
-    console.log(studentRegisterDetails);
+  
+//   useEffect(() => {
+//     const onSubmit = (e) => {
 
-      studentRegister(studentRegisterDetails);
-  };
+//         e.preventDefault();
+    
+//         postPicture();
+//         if(url) {
+//             const studentRegisterDetails = {
+//                 name,
+//                 studentid,
+//                 email,
+//                 password,
+//                 picture:url
+//               };
+//             console.log(studentRegisterDetails)
+//         }
+//      };
+// });
 
 
 
-  if (isAuthenticated) return <Navigate to='/studentprofile' />;
 
   return (
     <div style={{background:'#333', height:'100vh'}}>
@@ -139,4 +146,4 @@ const Studentregister = (props) => {
 
 
 
-export default Studentregister;
+export default Testing;

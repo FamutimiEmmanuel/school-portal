@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import adminContext from '../../context/admin/adminContext';
 import Button from 'react-bootstrap/Button';
@@ -17,25 +17,29 @@ const Adminregister = (props) => {
   const [image, setImage] = useState('');
   const [url,setUrl] = useState('');
   
-  const postPicture = ()=>{
-    const data = new FormData()
-    data.append("file",image)
-    data.append("upload_preset","insta-clone")
-    data.append("cloud_name","integrity1212")
-    fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
+  useEffect(()=>{
+    if(image){
+      const data = new FormData()
+      data.append("file",image)
+      data.append("upload_preset","insta-clone")
+      data.append("cloud_name","integrity1212")
+      fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
         method:"post",
         body:data
     })
-    .then(res=>res.json())
-    .then(data=>{
-       setUrl(data.url)
-       console.log(url);
-    })
-    .catch(err=>{
-        console.log(err)
-    })
+     .then(res=>res.json())
+     .then(data=>{
  
-}
+      setUrl(data.url);
+      // console.log(url);
+       
+    
+     })
+     .catch(err=>{
+         console.log(err)
+     })
+    }
+ },[image,url])
 
   
 
@@ -44,10 +48,7 @@ const Adminregister = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    postPicture();
-    if (adminid === '' || password === '') {
-      // setAlert('please input a valid ID and password', 'danger')
-    } else {
+  
       const adminRegisterDetails = {
         adminid,
         password,
@@ -57,14 +58,6 @@ const Adminregister = (props) => {
       console.log(adminRegisterDetails);
 
       adminRegister(adminRegisterDetails);
-
-      // setAlert('Register success', 'success')
-
-      
-      setAdminId('');
-      setPassword('');
-     
-    }
 
   };
 

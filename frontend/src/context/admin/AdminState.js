@@ -19,7 +19,7 @@ import {
 
   const AdminState = (props) => {
     const initialState = {
-        admin: null,
+        admin: {},
         token: localStorage.getItem('token'),
        isAuthenticated: null,
        loading: true,

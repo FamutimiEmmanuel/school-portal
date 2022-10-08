@@ -17,42 +17,44 @@ const Staffregister = (props) => {
 
   const [image, setImage] = useState('');
   const [url,setUrl] = useState('');
+
   
-  const postPicture = ()=>{
-    const data = new FormData()
-    data.append("file",image)
-    data.append("upload_preset","insta-clone")
-    data.append("cloud_name","integrity1212")
-    fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
+  useEffect(()=>{
+    if(image){
+      const data = new FormData()
+      data.append("file",image)
+      data.append("upload_preset","insta-clone")
+      data.append("cloud_name","integrity1212")
+      fetch("https://api.cloudinary.com/v1_1/integrity1212/image/upload",{
         method:"post",
         body:data
     })
-    .then(res=>res.json())
-    .then(data=>{
-       setUrl(data.url)
-       console.log(url);
-    })
-    .catch(err=>{
-        console.log(err)
-    })
+     .then(res=>res.json())
+     .then(data=>{
  
-}
+      setUrl(data.url);
+      // console.log(url);
+       
+    
+     })
+     .catch(err=>{
+         console.log(err)
+     })
+    }
+ },[image,url])
+  
+
 
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-//   useEffect(() => {
-//     if (isAuthenticated)  <Navigate to='/staffprofile' />;
-// },);
+
 
   const onSubmit = (e) => {
     e.preventDefault();
-    postPicture();
-    if (email === '' || password === '') {
-      // setAlert('please input a valid email and password', 'danger')
-    } else {
+   
       const staffRegisterDetails = {
         name,
         email,
@@ -63,16 +65,6 @@ const Staffregister = (props) => {
       console.log(staffRegisterDetails);
 
       staffRegister(staffRegisterDetails);
-
-      // setAlert('Register success', 'success')
-
-      setName('');
-      setEmail('');
-      setPassword('');
-     
-    }
-
-  
   };
 
   if (isAuthenticated) return <Navigate to='/staffprofile' />;

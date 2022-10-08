@@ -30,7 +30,7 @@ import {
 
   const StaffState = (props) => {
     const initialState = {
-        staff: null,
+        staff: {},
         current: null,
         token: localStorage.getItem('token'),
         isAuthenticated: null,

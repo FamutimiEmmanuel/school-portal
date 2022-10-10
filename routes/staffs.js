@@ -56,45 +56,39 @@ router.post('/api/staff/register',
     }
 });
 
-// router.get('/api/students', auth, async (req, res) => {
-//     try {
-//         const students = await Student.find({staff: req.staff.id}).sort({date: -1});
-//         res.json(students);
-//     } catch (err) {
-//         console.error(err.message);
-//         res.status(500).send('Server Error');
-//     }
-// });
+router.post('/api/staff/forgotpassword', 
+ [
+   
+   check( 'email', 'please include a valid email').isEmail(),
+   check('password', 'please enter a password with 6 or more characters').isLength({ min: 6})
+ ],
+  async (req, res) => {
+    const errors =  validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
 
-// router.put('/api/students/:id', auth,  async (req, res) => {
-//     // res.send('Update Contacts');
-//     const { name, studentid, email, password } = req.body;
+    const { email, password } = req.body;
+    try {
+      let staff = await Staff.findOne({ email });
 
-//     // Build contact object
-//     const contactFields = {};
-//     if(name) contactFields.name = name;
-//     if(studentid) contactFields.studentid = studentid;
-//     if(email) contactFields.email = email;
-//     if(password) contactFields.password = password;
+      if(!staff){
+        return res.status(422).json({error:"Staff dont exists with that email"})
+    }
 
-//     try {
-//         let student = await Contact.findById(req.params.id);
+     
 
-//         if(!student) return res.status(404).json({ msg: 'Student not found'});
-        
-//         // Make sure user owns contact
-//         if(student.staff.toString() !== req.staff.id) {
-//             return res.status(401).json({msg: 'Not Authorized'});
-//         }
+      const salt = await bcrypt.genSalt(10);
+      staff.password = await bcrypt.hash(password, salt);
+      await staff.save();
 
-//         student = await Student.findByIdAndUpdate(req.params.id, 
-//             { $set: contactFields },
-//             { new: true});
-//             res.json(student);
-//     } catch (err) {
-//         console.error(err.message);
-//         res.status(500).send('Server Error'); 
-//     }
-// });
+
+
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+});
+
 
 module.exports = router;

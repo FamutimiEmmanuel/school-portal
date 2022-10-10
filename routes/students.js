@@ -58,6 +58,40 @@ router.post('/api/students/register',
     }
 });
 
+router.post('/api/students/forgotpassword', 
+ [
+   
+   check( 'email', 'please include a valid email').isEmail(),
+   check('password', 'please enter a password with 6 or more characters').isLength({ min: 6})
+ ],
+  async (req, res) => {
+    const errors =  validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { email, password } = req.body;
+    try {
+      let student = await Student.findOne({ email });
+
+      if(!student){
+        return res.status(422).json({error:"Student dont exists with that email"})
+    }
+
+     
+
+      const salt = await bcrypt.genSalt(10);
+      student.password = await bcrypt.hash(password, salt);
+      await student.save();
+
+
+
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+});
+
 
 
 

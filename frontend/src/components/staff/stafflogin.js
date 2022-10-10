@@ -79,6 +79,7 @@ const Stafflogin = (props) => {
         </Col>
       </Form.Group>
       <a href="/staffregister" style={{color:''}}>Click here if you're not yet registered</a> <br></br>
+      <a href="/staffforgotpassword" style={{color:''}}>Forgot Password</a> <br></br>
       
       
     </Form>

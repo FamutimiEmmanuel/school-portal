@@ -84,7 +84,7 @@ router.post('/api/students/forgotpassword',
       student.password = await bcrypt.hash(password, salt);
       await student.save();
 
-
+      res.json(student);
 
     } catch (err) {
       console.error(err.message);

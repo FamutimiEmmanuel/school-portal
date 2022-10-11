@@ -111,12 +111,21 @@ import {
     //      };
     
      
-    
+     
      const logout = () =>  {
         dispatch({ 
             type: LOGOUT
         });
     };
+
+    const deleteStaff = async (id) => {
+      await axios.delete(`http://localhost:5000/api/staff/${id}`);
+      
+  };
+    const deleteStudent = async (id) => {
+      await axios.delete(`http://localhost:5000/api/students/${id}`);
+      
+  };
 
 
       return (
@@ -131,6 +140,8 @@ import {
              adminRegister,
              adminLogin,
              getAdmin,
+             deleteStaff,
+             deleteStudent,
             //  setAlert,
              logout
             }}

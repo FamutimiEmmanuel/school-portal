@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import staff from '../../img/staffroom.jpg'
 // import { connect } from 'react-redux';
 // import { staffLogin, setAlert } from '../../actions/staffActions';
 
@@ -44,7 +45,7 @@ const Stafflogin = (props) => {
 
   if (isAuthenticated) return <Navigate to='/staffprofile' />;
   return (
-    <div style={{background:'#333', height:'100vh'}}>
+    <div style={{background:`url(${staff}) center center/cover`, height:'100vh', opacity:'0.9'}}>
     <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Staff Login</h3>
     
     <Form onSubmit={onSubmit}>

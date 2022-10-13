@@ -74,6 +74,7 @@ import {
                         case GET_STUDENTS:
                           return {
                               ...state,
+                              isAuthenticated: true,
                               student: action.payload,
                               loading: false
                           };

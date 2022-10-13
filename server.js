@@ -9,7 +9,7 @@ connectDB();
 app.use(cors());
 app.use(express.json({ extended: false }));
 
-// app.get('/', (req, res) => res.json({ msg: 'Welcome to the school portal'}));
+
 
 app.use(require('./routes/auth'))
 app.use(require('./routes/staffs'))

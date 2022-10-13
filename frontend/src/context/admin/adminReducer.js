@@ -45,6 +45,7 @@ import {
                        case GET_ADMIN:
                          return {
                              ...state,
+                             isAuthenticated: false,
                              admin: action.payload,
                              loading: false
                          };

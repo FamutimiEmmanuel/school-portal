@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import student from '../../img/classteacher.jpg'
 // import { connect } from 'react-redux';
 // import { studentRegister, setAlert } from '../../actions/studentActions';
 
@@ -41,6 +42,10 @@ const Studentregister = (props) => {
          console.log(err)
      })
     }
+
+    
+
+ 
  },[image,url])
   
 
@@ -76,7 +81,7 @@ const Studentregister = (props) => {
   if (isAuthenticated) return <Navigate to='/studentprofile' />;
 
   return (
-    <div style={{background:'#333', height:'100vh'}}>
+    <div style={{background:`url(${student}) center center/cover`, height:'100vh', opacity:'0.7'}}>
     <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Student Register</h3>
     <Form  onSubmit = {onSubmit}>
       <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalName" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>

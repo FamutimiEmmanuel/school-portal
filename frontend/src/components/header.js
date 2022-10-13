@@ -6,7 +6,7 @@ import sport from '../img/sport.jpg'
 
 function Header() {
   return (
-    
+    <div >
     <Carousel fade>
       <Carousel.Item>
         <img
@@ -14,7 +14,7 @@ function Header() {
         //   src="https://unsplash.com/photos/UqTrGSohyCs"
           src={childrenreading}
           alt="First slide"
-          style={{ width: '100%', height: '90vh' }}
+          style={{ width: '100%', height: '100vh' }}
           // width={900} height={500}
         />
         <Carousel.Caption  style={{ color:"#333",fontSize:"20px", fontWeight:"bold"}}>
@@ -31,7 +31,7 @@ function Header() {
         //   src="holder.js/800x400?text=Second slide&bg=282c34"
           src={childrenlibrary}
           alt="Second slide"
-          style={{ width: '100%', height: '90vh' }}
+          style={{ width: '100%', height: '100vh' }}
           // width={900} height={500}
         />
 
@@ -49,7 +49,7 @@ function Header() {
         //   src="https://unsplash.com/photos/UqTrGSohyCs"
           src={sport}
           alt="Fourth slide"
-          style={{ width: '100%', height: '90vh' }}
+          style={{ width: '100%', height: '100vh' }}
           // width={900} height={500}
         />
         <Carousel.Caption style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>
@@ -61,6 +61,7 @@ function Header() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
   
   );
 }

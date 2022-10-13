@@ -10,8 +10,9 @@ const Studentprofile = (props) => {
   const { getStudents, student} = StudentContext;
 
   useEffect(() => {
-    getStudents()
-  },)
+    getStudents();
+    // eslint-disable-next-line
+  }, [])
 
   return (
     <div style={{background:'#333', height:'100vh', color:'#fff'}}>

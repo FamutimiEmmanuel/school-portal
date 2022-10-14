@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home" style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>Emmanuel High School</Navbar.Brand>
+        <Navbar.Brand href="#home" style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>Emmanuel Famutimi High School</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

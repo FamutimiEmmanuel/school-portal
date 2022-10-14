@@ -7,6 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import staff from '../../img/staffroom.jpg'
+import NavBar from '../navbar';
+import Footer from '../footer'
 // import PropTypes from 'prop-types'
 // import { connect } from 'react-redux';
 // import { staffRegister, setAlert } from '../../actions/staffActions';
@@ -72,7 +74,9 @@ const Staffregister = (props) => {
 
  
   return (
-    <div style={{background:`url(${staff}) center center/cover`, height:'100vh', opacity:'0.9'}}>
+    <div style={{background:`url(${staff}) center center/cover`, height:'100vh', opacity:'1'}}>
+      <NavBar/>
+      <div style={{height:'85vh'}}>
     <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Staff Register</h3>
     <Form onSubmit={onSubmit}>
       <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalName" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
@@ -120,6 +124,8 @@ const Staffregister = (props) => {
       </Form.Group>
       {/* {isAuthenticated ? <h6>you are registered</h6> : <h6> register here</h6>} */}
     </Form>
+    </div>
+    <Footer/>
     </div>
   );
 }

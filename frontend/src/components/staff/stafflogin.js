@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import staff from '../../img/staffroom.jpg'
+import NavBar from '../navbar';
+import Footer from '../footer'
 // import { connect } from 'react-redux';
 // import { staffLogin, setAlert } from '../../actions/staffActions';
 
@@ -45,7 +47,9 @@ const Stafflogin = (props) => {
 
   if (isAuthenticated) return <Navigate to='/staffprofile' />;
   return (
-    <div style={{background:`url(${staff}) center center/cover`, height:'100vh', opacity:'0.9'}}>
+    <div style={{background:`url(${staff}) center center/cover`, height:'100vh', opacity:'1'}}>
+      <NavBar/>
+      <div style={{height:'85vh'}}>
     <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Staff Login</h3>
     
     <Form onSubmit={onSubmit}>
@@ -84,8 +88,8 @@ const Stafflogin = (props) => {
       
       
     </Form>
-    {/* </div> */}
-   
+    </div>
+    <Footer/>
     </div>
   );
 }

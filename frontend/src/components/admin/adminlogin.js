@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import admin from '../../img/admin1.jpg'
+import NavBar from '../navbar';
+import Footer from '../footer'
 // import { connect } from 'react-redux';
 // import { adminLogin, setAlert } from '../../actions/adminActions';
 
@@ -43,7 +45,9 @@ const Adminlogin = (props) => {
   if (isAuthenticated) return <Navigate to='/adminprofile' />;
 
   return (
-    <div style={{background:`url(${admin}) center center/cover`, height:'100vh', opacity:'0.7'}}>
+    <div style={{background:`url(${admin}) center center/cover`, height:'100vh', opacity:'1'}}>
+      <NavBar/>
+      <div style={{height:'85vh'}}>
     <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Admin Login</h3>
     <Form onSubmit={onSubmit}>
       <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalAdminId" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
@@ -74,6 +78,9 @@ const Adminlogin = (props) => {
     </Form>
     <a href="/adminregister">Click here if you're not yet registered</a><br></br>
     <a href="/adminforgotpassword">Forgot Password</a><br></br>
+
+    </div>
+    <Footer/>
     </div>
   );
 }

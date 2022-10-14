@@ -5,7 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import student from '../../img/classteacher.jpg'
+import student from '../../img/classteacher.jpg';
+import NavBar from '../navbar';
+import Footer from '../footer'
 // import { Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { connect } from 'react-redux';
@@ -46,7 +48,9 @@ const Studentlogin = () => {
 
   if (isAuthenticated) return <Navigate to='/studentprofile' />;
   return (
-    <div style={{background:`url(${student}) center center/cover`, height:'100vh', opacity:'0.7'}}>
+    <div style={{background:`url(${student}) center center/cover`, height:'100vh', opacity:'1'}}>
+      <NavBar/>
+      <div style={{height:'85vh'}}>
     <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Student Login</h3>
     <Form onSubmit={onSubmit}>
       <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalEmail" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
@@ -77,6 +81,12 @@ const Studentlogin = () => {
     </Form>
     <a href="/studentregister">Click here if you're not yet registered</a><br></br>
     <a href="/studentforgotpassword">forgot password</a>
+   
+   
+    </div>
+    <Footer/>
+ 
+    
     </div>
   );
 }

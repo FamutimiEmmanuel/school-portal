@@ -7,6 +7,27 @@ const config = require('config');
 const Student = require('../models/Students');
 const studentauth = require('../middleware/studentauth');
 
+// const nodemailer = require('nodemailer')
+// const sendgridTransport = require('nodemailer-sendgrid-transport')
+
+//
+
+
+// const transporter = nodemailer.createTransport(sendgridTransport({
+//     auth:{
+//         api_key:"SG.FahleT6-RXSjvaQ1ukeAOA.KkC5-CcCpTk9G7OPOkkatONozqA316pooWqK8gupos"
+//     }
+// }))
+
+// var mailOptions = {
+//   from: '"Example Team" <from@example.com>',
+//   to: 'user1@example.com, user2@example.com',
+//   subject: 'Nice Nodemailer test',
+//   text: 'Hey there, it’s our first message sent with Nodemailer ;) ',
+//   html: '<b>Hey there! </b><br> This is our first message sent with Nodemailer'
+// };
+
+
 router.post('/api/students/register', 
  [
    check('name', 'please add name').not().isEmpty(),
@@ -39,6 +60,13 @@ router.post('/api/students/register',
       const salt = await bcrypt.genSalt(10);
       student.password = await bcrypt.hash(password, salt);
       await student.save();
+
+      // transporter.sendMail({
+      //               to:student.email,
+      //               from:"no-reply@emmanuel famutimi high school.com",
+      //               subject:"signup success",
+      //               html:"<h1>welcome to our school</h1>"
+      //           })
 
       const payload = {
         student: {

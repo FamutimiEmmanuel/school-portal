@@ -57,7 +57,7 @@ import {
             type: REGISTER_SUCCESS,
             payload: res.data
           });
-          getStudents ();
+          // getStudents ();
         } catch (err) {
           dispatch({
             type: REGISTER_FAIL,
@@ -80,7 +80,7 @@ import {
             type: LOGIN_SUCCESS,
             payload: res.data
           });
-          getStudents();
+          // getStudents();
         } catch (err) {
           dispatch({
             type: LOGIN_FAIL,

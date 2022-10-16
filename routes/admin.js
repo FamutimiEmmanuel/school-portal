@@ -9,6 +9,21 @@ const Student = require('../models/Students');
 const Staff = require('../models/Staffs');
 const adminauth = require('../middleware/adminauth');
 
+const crypto = require('crypto')
+const nodemailer = require('nodemailer')
+const sendgridTransport = require('nodemailer-sendgrid-transport')
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port: 587,
+  secure:false,
+  requireTLS: true,
+  auth: {
+      user: 'madalyn.bauch65@ethereal.email',
+      pass: 'DgNRCsd7M6pyVMufYn'
+  }
+});
+
 router.post('/api/admin/register', 
  [
    check('adminid', 'please enter a valid adminid').not().isEmpty(),
@@ -119,6 +134,58 @@ router.delete('/api/students/:id', adminauth, async (req, res) => {
     
   }
 });
+
+router.post('/api/admin/forgotpassword',(req,res)=>{
+  crypto.randomBytes(32,(err,buffer)=>{
+      if(err){
+          console.log(err)
+      }
+      const token = buffer.toString("hex")
+      Admin.findOne({email:req.body.email})
+      .then(admin=>{
+          if(!admin){
+              return res.status(422).json({error:"Admin dont exists with that email"})
+          }
+          admin.resetToken = token
+          admin.expireToken = Date.now() + 3600000
+          admin.save().then((result)=>{
+              // transporter.sendMail({
+              //     to:student.email,
+              //     from:"no-replay@ emmanuel.com",
+              //     subject:"password reset",
+              //     html:`
+              //     <p>You requested for password reset</p>
+              //     <h5>click in this <a href="http://localhost:3000/adminresetpassword/${token}">link</a> to reset password</h5>
+              //     `
+              // })
+              
+              res.json({message:"check your email"})
+          })
+
+      })
+  })
+})
+
+router.post('/api/admin/newpassword',(req,res)=>{
+ const newPassword = req.body.password
+ const sentToken = req.body.token
+ Admin.findOne({resetToken:sentToken,expireToken:{$gt:Date.now()}})
+ .then(admin=>{
+     if(!admin){
+         return res.status(422).json({error:"Try again session expired"})
+     }
+     bcrypt.hash(newPassword,12).then(hashedpassword=>{
+        admin.password = hashedpassword
+        admin.resetToken = undefined
+        admin.expireToken = undefined
+        admin.save().then((savedadmin)=>{
+            res.json({message:"password updated success"})
+        })
+     })
+ }).catch(err=>{
+     console.log(err)
+ })
+})
 
 
 module.exports = router;

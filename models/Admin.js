@@ -13,6 +13,8 @@ const AdminSchema = mongoose.Schema({
     picture: {
       type: String
     },
+    resetToken:String,
+    expireToken:Date,
    
 });
 

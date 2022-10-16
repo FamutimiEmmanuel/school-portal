@@ -22,6 +22,8 @@ const StaffSchema = mongoose.Schema({
     picture: {
       type: String
     },
+    resetToken:String,
+    expireToken:Date,
    
 });
 

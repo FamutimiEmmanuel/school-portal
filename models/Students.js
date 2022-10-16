@@ -22,6 +22,8 @@ const StudentSchema = mongoose.Schema({
     picture: {
       type: String
     },
+    resetToken:String,
+    expireToken:Date,
    
 });
 

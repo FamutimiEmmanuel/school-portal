@@ -8,15 +8,18 @@ import {
 } from "react-router-dom";
 import Studentlogin from "./components/student/studentlogin";
 import Studentforgotpassword from './components/student/studentforgotpassword';
+import Studentresetpassword from './components/student/studentresetpassword';
 import Studentregister from "./components/student/studentregister";
 import Studentprofile from "./components/student/studentprofile";
 import StudentState from './context/student/StudentState';
 import Stafflogin from "./components/staff/stafflogin";
 import Staffforgotpassword from './components/staff/staffforgotpassword';
+import Staffresetpassword from './components/staff/staffresetpassword';
 import Staffregister from "./components/staff/staffregister";
 import Staffprofile from "./components/staff/staffprofile";
 import Adminlogin from "./components/admin/adminlogin";
 import Adminforgotpassword from './components/admin/adminforgotpassword';
+import Adminresetpassword from './components/admin/adminresetpassword';
 import Adminprofile from "./components/admin/adminprofile";
 import Adminregister from './components/admin/adminregister';
 import AdminState from './context/admin/AdminState';
@@ -50,20 +53,24 @@ function App() {
       <Route path="/" element={<Home />}></Route>
       <Route path="/about" element={<Authors />}></Route>
       <Route path="/testing" element={<Testing />}></Route>
+
       <Route path="/studentregister" element={<Studentregister />}></Route>
       <Route path="/studentlogin" element={<Studentlogin />}></Route>
       <Route path="/studentforgotpassword" element={<Studentforgotpassword />}></Route>
+      <Route path="/studentresetpassword/:token" element={<Studentresetpassword />}></Route>
       <Route path='/studentprofile' element={<StudentPrivateRoute component={Studentprofile} />} />
       
      
       <Route path="/staffregister" element={<Staffregister />}></Route>
       <Route path="/stafflogin" element={<Stafflogin />}></Route>
       <Route path="/staffforgotpassword" element={<Staffforgotpassword />}></Route>
+      <Route path="/staffresetpassword/:token" element={<Staffresetpassword />}></Route>
       <Route path='/staffprofile' element={<StaffPrivateRoute component={Staffprofile} />} />
     
      
       <Route path="/adminlogin" element={<Adminlogin />}></Route>
       <Route path="/adminforgotpassword" element={<Adminforgotpassword />}></Route>
+      <Route path="/adminresetpassword/:token" element={<Adminresetpassword />}></Route>
       <Route path="/adminregister" element={<Adminregister />}></Route>
       <Route path='/adminprofile' element={<AdminPrivateRoute component={Adminprofile} />} />
      

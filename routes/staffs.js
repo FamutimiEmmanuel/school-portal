@@ -7,20 +7,37 @@ const config = require('config');
 const Staff = require('../models/Staffs');
 const Student = require('../models/Students');
 
-const crypto = require('crypto')
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
+const {google} = require('googleapis');
 const sendgridTransport = require('nodemailer-sendgrid-transport')
 
+const OAuth2 = google.auth.OAuth2;
+
+const myOAuth2Client = new OAuth2(
+  '56440586722-3t6shacl45okg4rf8ei6oa0ata2482ui.apps.googleusercontent.com',
+  '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',
+  'https://developers.google.com/oauthplayground'
+)
+
+myOAuth2Client.setCredentials({
+  refresh_token:'1//04Kj26lfqzqNhCgYIARAAGAQSNwF-L9IrORTrsd8wQwrqwKHyFRGMWL8qlrtNwq7_bU5_SthxAVZRi39ekgyKGg7OXrYHQ0koG5I'
+})
+
+const myAccessToken = myOAuth2Client.getAccessToken()
+
 const transporter = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
-  port: 587,
-  secure:false,
-  requireTLS: true,
+  service:'gmail',
   auth: {
-      user: 'madalyn.bauch65@ethereal.email',
-      pass: 'DgNRCsd7M6pyVMufYn'
+      type:'OAuth2',
+      user:'olamide.famutimi@gmail.com',
+      clientId:'56440586722-3t6shacl45okg4rf8ei6oa0ata2482ui.apps.googleusercontent.com',
+      clientSecret:'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',
+      refreshToken:'1//04Kj26lfqzqNhCgYIARAAGAQSNwF-L9IrORTrsd8wQwrqwKHyFRGMWL8qlrtNwq7_bU5_SthxAVZRi39ekgyKGg7OXrYHQ0koG5I',
+      // accessToken:'ya29.a0Aa4xrXNKzbhnTHnBtzc6-D4vb-VrHUa2qNZXN0nH-QHrwzMWhN6hrnCgHNsYn_ziUupe6i6knt_ohODuWNmkZS3QbwUw15pmHMZUstII2nTDzb5R8NkkMIJV5nwRm9H9IWoIy6YgvRehwVJGgXnTe3wXtqxTaCgYKATASARESFQEjDvL9ofU7LVbJ_kl1k2bsoxzxkw0163',
+      accessToken:myAccessToken
   }
 });
+
 
 router.post('/api/staff/register', 
  [
@@ -86,15 +103,15 @@ router.post('/api/staff/forgotpassword',(req,res)=>{
           staff.resetToken = token
           staff.expireToken = Date.now() + 3600000
           staff.save().then((result)=>{
-              // transporter.sendMail({
-              //     to:student.email,
-              //     from:"no-replay@ emmanuel.com",
-              //     subject:"password reset",
-              //     html:`
-              //     <p>You requested for password reset</p>
-              //     <h5>click in this <a href="http://localhost:3000/staffresetpassword/${token}">link</a> to reset password</h5>
-              //     `
-              // })
+              transporter.sendMail({
+                  to:staff.email,
+                  from:"no-replay@ emmanuel.com",
+                  subject:"password reset",
+                  html:`
+                  <p>You requested for password reset</p>
+                  <h5>click in this <a href="http://localhost:3000/staffresetpassword/${token}">link</a> to reset password</h5>
+                  `
+              })
               
               res.json({message:"check your email"})
           })

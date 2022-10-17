@@ -94,7 +94,7 @@ const Adminregister = (props) => {
         {/* <Form.Label column sm={2}>
           Upload Image
         </Form.Label> */}
-        <Col sm={{ span: 3, offset: 0 }}>
+        <Col  style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
           <h4 style={{color:'#fff'}}>Upload Picture</h4>
           <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
         </Col>

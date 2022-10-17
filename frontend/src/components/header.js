@@ -13,7 +13,7 @@ function Header() {
           className="d-block w-100"
         //   src="https://unsplash.com/photos/UqTrGSohyCs"
           src={childrenreading}
-          alt="First slide"
+          alt="Children Reading"
           style={{ width: '100%', height: '100vh' }}
           // width={900} height={500}
         />
@@ -30,7 +30,7 @@ function Header() {
           className="d-block w-100"
         //   src="holder.js/800x400?text=Second slide&bg=282c34"
           src={childrenlibrary}
-          alt="Second slide"
+          alt="Children Library"
           style={{ width: '100%', height: '100vh' }}
           // width={900} height={500}
         />
@@ -48,7 +48,7 @@ function Header() {
           className="d-block w-100"
         //   src="https://unsplash.com/photos/UqTrGSohyCs"
           src={sport}
-          alt="Fourth slide"
+          alt="Sports"
           style={{ width: '100%', height: '100vh' }}
           // width={900} height={500}
         />

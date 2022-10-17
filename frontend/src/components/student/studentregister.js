@@ -4,6 +4,8 @@ import studentContext from '../../context/student/studentContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import { FormLabel } from 'react-bootstrap';
+
 import Row from 'react-bootstrap/Row';
 import NavBar from '../navbar';
 import Footer from '../footer'
@@ -86,7 +88,7 @@ const Studentregister = (props) => {
     <div style={{background:`url(${student}) center center/cover`, height:'100vh', opacity:'1'}}>
       <NavBar/>
       <div style={{height:'85vh'}}>
-    <h3 className="pt-5 " style={{color:'white',fontSize:'35px'}}>Student Register</h3>
+    <h3 className="pt-5" style={{color:'white',fontSize:'35px'}}>Student Register</h3>
     <Form  onSubmit = {onSubmit}>
       <Form.Group as={Row} className="mb-3 mt-4" controlId="formHorizontalName" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
         {/* <Form.Label column sm={2}>
@@ -129,9 +131,8 @@ const Studentregister = (props) => {
         {/* <Form.Label column sm={2}>
           Upload Image
         </Form.Label> */}
-        <Col sm={{ span: 3, offset: 0 }}>
-        <h4 style={{color:'#fff'}}>Upload Picture</h4>
-        {/* <input name="Select File" type="file" value={image} onChange={(e)=>setImage(e.target.files[0])} /> */}
+        <Col style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
+          <h4 className="text-primary" style={{color:'#fff'}}>Upload Picture</h4>
         <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
         </Col>
       </Form.Group>

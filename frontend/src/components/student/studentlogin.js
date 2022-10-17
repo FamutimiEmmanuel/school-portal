@@ -1,5 +1,5 @@
 import React, { useState, useContext,useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate,Link } from 'react-router-dom';
 import studentContext from '../../context/student/studentContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -79,8 +79,8 @@ const Studentlogin = () => {
         </Col>
       </Form.Group>
     </Form>
-    <a href="/studentregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</a><br></br>
-    <a href="/studentforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</a>
+    <Link to="/studentregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</Link><br></br>
+    <Link to="/studentforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</Link>
    
    
     </div>

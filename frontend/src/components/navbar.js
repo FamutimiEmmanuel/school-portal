@@ -2,18 +2,20 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import book from '../img/book.jpg'
 
 function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home" style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>Emmanuel Famutimi High School</Navbar.Brand>
+        <Navbar.Brand href="/" style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}> <i class="fa fa-book" style={{fontSize:'30px', color:'white', opacity:'0.5'}}></i>  Emmanuel Famutimi High School</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/" style={{ color:"#fff",fontSize:"20px"}}>Home</Nav.Link>
             <Nav.Link href="/about" style={{ color:"#fff",fontSize:"20px"}}>About Us</Nav.Link>
-            <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{ color:"#fff",fontSize:"20px"}}>
+            <Nav.Link href="https://buy.stripe.com/test_cN26rIfhy4kDfV66oo" style={{ color:"#fff",fontSize:"20px"}}>Payment</Nav.Link>
+            {/* <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{ color:"#fff",fontSize:"20px"}}>
               <NavDropdown.Item href="https://buy.stripe.com/test_cN26rIfhy4kDfV66oo" style={{ color:"#333",fontSize:"20px"}}>
                payment
               </NavDropdown.Item>
@@ -27,7 +29,7 @@ function NavBar() {
               <NavDropdown.Item href="/sport" style={{ color:"#333",fontSize:"20px"}}>
               Inter-House Sport
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
           <Nav>
             <Nav.Link href="/studentlogin" style={{ color:"#fff",fontSize:"20px"}}>Student</Nav.Link>

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate,Link } from 'react-router-dom';
 import staffContext from '../../context/staff/staffContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -83,8 +83,8 @@ const Stafflogin = (props) => {
           <Button type="submit" style={{background:'#333'}}>Sign in</Button>
         </Col>
       </Form.Group>
-      <a href="/staffregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</a> <br></br>
-      <a href="/staffforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</a> <br></br>
+      <Link to="/staffregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</Link> <br></br>
+      <Link to="/staffforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</Link> <br></br>
       
       
     </Form>

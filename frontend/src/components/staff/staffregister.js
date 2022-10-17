@@ -111,8 +111,8 @@ const Staffregister = (props) => {
         {/* <Form.Label column sm={2}>
           Upload Image
         </Form.Label> */}
-        <Col sm={{ span: 3, offset: 0 }}>
-          <h4 style={{color:'#fff'}}>Upload Picture</h4>
+        <Col style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
+          <h4 className="text-primary" style={{color:'#fff'}}>Upload Picture</h4>
           <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
         </Col>
       </Form.Group>

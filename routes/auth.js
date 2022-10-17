@@ -146,13 +146,7 @@ router.post('/api/admin/login',
     }
 
     const { adminid, password} = req.body;
-    
-    // if(adminid !== 'emmanuel') {
-    //   throw new err;
-    // }
-    // if(password !== '123456') {
-    //   throw new err;
-    // }
+  
     try {
        let admin = await Admin.findOne({ adminid });
         if(!admin) {

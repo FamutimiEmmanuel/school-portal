@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate,Link } from 'react-router-dom';
 import adminContext from '../../context/admin/adminContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -76,8 +76,8 @@ const Adminlogin = (props) => {
         </Col>
       </Form.Group>
     </Form>
-    <a href="/adminregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</a><br></br>
-    <a href="/adminforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</a><br></br>
+    <Link to="/adminregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</Link><br></br>
+    <Link to="/adminforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</Link><br></br>
 
     </div>
     <Footer/>

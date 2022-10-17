@@ -62,7 +62,7 @@ function Adminprofile() {
       <Button type="submit" style={{background:'#333'}} onClick={onDeleteStudent}><i className='fas fa-remove'  style={{fontSize:'25px', color:'green'}}></i>Delete Student
        </Button>
        
-       <Button type="submit" style={{background:'#333'}}><i className='fas fa-logout'  style={{fontSize:'25px', color:'green'}} onClick={() => logout()}></i>Disserminate Info
+       <Button type="submit" style={{background:'#333'}}  onClick={() => logout()}><i className='fas fa-logout'  style={{fontSize:'25px', color:'green'}}></i>Disserminate Info
        </Button>
      
       

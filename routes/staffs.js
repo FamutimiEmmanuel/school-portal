@@ -70,6 +70,14 @@ router.post('/api/staff/register',
       staff.password = await bcrypt.hash(password, salt);
       await staff.save();
 
+      transporter.sendMail({
+        from: "no-reply@emmanuel famutimi high school.com",
+        to: staff.email,
+        subject:"signup success",
+        text: 'Glad to have you here',
+        html: "<h1>welcome to our school</h1>"
+                  })
+
       const payload = {
         staff: {
           id:staff._id
@@ -109,7 +117,7 @@ router.post('/api/staff/forgotpassword',(req,res)=>{
                   subject:"password reset",
                   html:`
                   <p>You requested for password reset</p>
-                  <h5>click in this <a href="http://localhost:3000/staffresetpassword/${token}">link</a> to reset password</h5>
+                  <h5>click in this <a href="http://emmanuel-school-portal.herokuapp.com/staffresetpassword/${token}">link</a> to reset password</h5>
                   `
               })
               

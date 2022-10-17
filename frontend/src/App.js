@@ -31,6 +31,7 @@ import setAuthToken from './utils/setAuthToken';
 import Home from "./components/home";
 import Authors from "./components/authors";
 import Testing from './components/testing';
+import Checkemail from './components/checkemail';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Provider } from 'react-redux';
@@ -53,6 +54,7 @@ function App() {
       <Route path="/" element={<Home />}></Route>
       <Route path="/about" element={<Authors />}></Route>
       <Route path="/testing" element={<Testing />}></Route>
+      <Route path="/checkemail" element={<Checkemail />}></Route>
 
       <Route path="/studentregister" element={<Studentregister />}></Route>
       <Route path="/studentlogin" element={<Studentlogin />}></Route>

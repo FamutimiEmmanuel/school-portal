@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate ,useHref } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -19,15 +19,7 @@ const Studentforgotpassword = () => {
     email
 
   };
-//  const postforgotdetails = (e) => {
-//     fetch("http://localhost:5000/api/students/forgotpassword",{
-//         method:"post",
-//         body:email
-//     })
-//     .catch(err=>{
-//         console.log(err)
-//     })
-//  }
+
        
 
 
@@ -39,13 +31,14 @@ const Studentforgotpassword = () => {
       }
     }
    await axios.post("http://localhost:5000/api/students/forgotpassword", studentLoginDetails, config);
- 
-      //  postforgotdetails();
-       <Navigate to='/checkemail' />
-       console.log('check your mail')
+   
+   console.log('check your mail')
+
+   window.location='/checkemail';
+    
 };
 
-     
+
      
    
 
@@ -68,7 +61,7 @@ const Studentforgotpassword = () => {
 
       <Form.Group as={Row} className="mb-3" style={{justifyContent:'center', justifyItems:'center', textAlign:'center'}}>
         <Col sm={{ span: 3, offset: 0 }}>
-          <Button type="submit"  style={{background:'#333'}}>Submit</Button>
+          <Button type="submit"  style={{background:'#333'}} >Submit</Button>
         </Col>
       </Form.Group>
     </Form>

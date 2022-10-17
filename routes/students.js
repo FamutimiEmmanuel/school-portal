@@ -77,7 +77,7 @@ router.post('/api/students/register',
         from: "no-reply@emmanuel famutimi high school.com",
         to: student.email,
         subject:"signup success",
-        // text: 'Glad to have you here',
+        text: 'Glad to have you here',
         html: "<h1>welcome to our school</h1>"
                   })
 
@@ -120,7 +120,7 @@ router.post('/api/students/forgotpassword',(req,res)=>{
                   subject:"password reset",
                   html:`
                   <p>You requested for password reset</p>
-                  <h5>click in this <a href="http://localhost:3000/studentresetpassword/${token}">link</a> to reset password</h5>
+                  <h5>click in this <a href="http://emmanuel-school-portal.herokuapp.com/studentresetpassword/${token}">link</a> to reset password</h5>
                   `
               })
               

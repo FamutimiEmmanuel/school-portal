@@ -31,9 +31,9 @@ const Adminforgotpassword = () => {
     }
    await axios.post("http://localhost:5000/api/admin/forgotpassword", adminLoginDetails, config);
  
-      //  postforgotdetails();
-       <Navigate to='/checkemail' />
+    
        console.log('check your mail')
+       window.location='/checkemail'
 };
 
      

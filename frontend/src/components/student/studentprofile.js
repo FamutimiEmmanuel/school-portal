@@ -7,7 +7,7 @@ const Studentprofile = (props) => {
 
   const StudentContext = useContext(studentContext);
 
-  const { getStudents, student} = StudentContext;
+  const { getStudents, student, logout} = StudentContext;
 
   useEffect(() => {
     getStudents();
@@ -93,7 +93,9 @@ const Studentprofile = (props) => {
        </div> 
        <div className="pt-4">
          {/* <h3 style={{fontSize:'25px'}}> */}
-         <Button type="submit" style={{background:'#333'}}><i className='fas fa-download'  style={{fontSize:'25px', color:'green'}}></i>Download Result
+         {/* <Button type="submit" style={{background:'#333'}}><i className='fas fa-download'  style={{fontSize:'25px', color:'green'}}></i>Download Result
+       </Button> */}
+         <Button type="submit" style={{background:'#333'}}><i className='fas fa-logout'  style={{fontSize:'25px', color:'green'}} onClick={()=> logout()}></i>Logout
        </Button>
          {/* <i className='fas fa-download'  style={{fontSize:'30px', color:'green'}}></i>Download Result</h3> */}
          

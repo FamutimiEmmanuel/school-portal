@@ -9,7 +9,7 @@ function Adminprofile() {
 
   const AdminContext = useContext(adminContext);
 
-  const {  getAdmin , admin ,deleteStaff, deleteStudent } = AdminContext;
+  const {  getAdmin , admin ,deleteStaff, deleteStudent, logout } = AdminContext;
 
   const [staff, setStaff] = useState('');
   const [student, setStudent] = useState('');
@@ -62,8 +62,8 @@ function Adminprofile() {
       <Button type="submit" style={{background:'#333'}} onClick={onDeleteStudent}><i className='fas fa-remove'  style={{fontSize:'25px', color:'green'}}></i>Delete Student
        </Button>
        
-       {/* <Button type="submit" style={{background:'#333'}}><i className='fas fa-bullhorn'  style={{fontSize:'25px', color:'green'}}></i>Disserminate Info
-       </Button> */}
+       <Button type="submit" style={{background:'#333'}}><i className='fas fa-logout'  style={{fontSize:'25px', color:'green'}} onClick={() => logout()}></i>Disserminate Info
+       </Button>
      
       
  

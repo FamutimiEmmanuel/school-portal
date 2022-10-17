@@ -7,7 +7,7 @@ import staffContext from '../../context/staff/staffContext';
 function Staffprofile() {
   const StaffContext = useContext(staffContext);
 
-  const { getStaffs, staff } = StaffContext;
+  const { getStaffs, staff, logout } = StaffContext;
 
 
   useEffect(() => {
@@ -32,7 +32,9 @@ function Staffprofile() {
 
        <div className="pt-5" style={{justifyContent:'center',justifyItems:'center', textAlign:'center'}}>
        <input name="Select File" type="file" /> <br></br>
-       <Button type="submit" style={{background:'#333'}}><i className='fas fa-upload'  style={{fontSize:'25px', color:'green'}}></i>Upload Result
+       {/* <Button type="submit" style={{background:'#333'}}><i className='fas fa-upload'  style={{fontSize:'25px', color:'green'}}></i>Upload Result
+       </Button> */}
+       <Button type="submit" style={{background:'#333'}}><i className='fas fa-logout'  style={{fontSize:'25px', color:'green'}} onClick={() => logout()}></i>Upload Result
        </Button>
 
      

@@ -19,9 +19,9 @@ function Header() {
         />
         <Carousel.Caption  style={{ color:"#333",fontSize:"20px", fontWeight:"bold"}}>
           <h3>School Children Reading</h3>
-          <p>Famutimi was invited to training camp with the Philadelphia 76ers and made appearances in four preseason games (4.5 ppg, 2.0 rpg) before being waived. 
-            He played 47 games for the Arkansas RimRockers in 2005–06, and averaged 6.8 points 
-            and 2.7 rebounds in 16.5 minutes per game while shooting .513 (122-238) from the field.
+          <p>
+            School children studying for their examinations under the supervision of their class teacher.
+            Students are permitted to stay back and study extra-time during examination periods
          </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -37,9 +37,9 @@ function Header() {
 
         <Carousel.Caption style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>
           <h3>School Library</h3>
-          <p>Famutimi was invited to training camp with the Philadelphia 76ers and made appearances in four preseason games (4.5 ppg, 2.0 rpg) before being waived. 
-            He played 47 games for the Arkansas RimRockers in 2005–06, and averaged 6.8 points 
-            and 2.7 rebounds in 16.5 minutes per game while shooting .513 (122-238) from the field.
+          <p>
+            Student going through the school library in search of novels/textbooks.
+            Students are allowed to borrow books from the library and return it when due.
          </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -54,9 +54,10 @@ function Header() {
         />
         <Carousel.Caption style={{ color:"#fff",fontSize:"20px", fontWeight:"bold"}}>
           <h3>Sporting Activities</h3>
-          <p>Famutimi was invited to training camp with the Philadelphia 76ers and made appearances in four preseason games (4.5 ppg, 2.0 rpg) before being waived. 
-            He played 47 games for the Arkansas RimRockers in 2005–06, and averaged 6.8 points 
-            and 2.7 rebounds in 16.5 minutes per game while shooting .513 (122-238) from the field.
+          <p>
+            Annual sport festival ongoing with a snapshot of basketball players competiting for 
+            the prestigious principal trophy.There are also a variety of other sports(both indoor and outdoor) 
+            being played too. 
          </p>
         </Carousel.Caption>
       </Carousel.Item>

@@ -76,8 +76,8 @@ const Adminlogin = (props) => {
         </Col>
       </Form.Group>
     </Form>
-    <a href="/adminregister">Click here if you're not yet registered</a><br></br>
-    <a href="/adminforgotpassword">Forgot Password</a><br></br>
+    <a href="/adminregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</a><br></br>
+    <a href="/adminforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</a><br></br>
 
     </div>
     <Footer/>

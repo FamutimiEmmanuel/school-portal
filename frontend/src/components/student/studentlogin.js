@@ -79,8 +79,8 @@ const Studentlogin = () => {
         </Col>
       </Form.Group>
     </Form>
-    <a href="/studentregister">Click here if you're not yet registered</a><br></br>
-    <a href="/studentforgotpassword">forgot password</a>
+    <a href="/studentregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</a><br></br>
+    <a href="/studentforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</a>
    
    
     </div>

@@ -3,7 +3,7 @@ import NavBar from './navbar';
 import Footer from './footer';
 import Header from './header';
 // import Mission from './mission';
-// import Authors from './authors';
+import Authors from './authors';
 
 function Home() {
   return (

@@ -83,8 +83,8 @@ const Stafflogin = (props) => {
           <Button type="submit" style={{background:'#333'}}>Sign in</Button>
         </Col>
       </Form.Group>
-      <a href="/staffregister" style={{color:''}}>Click here if you're not yet registered</a> <br></br>
-      <a href="/staffforgotpassword" style={{color:''}}>Forgot Password</a> <br></br>
+      <a href="/staffregister" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Click here if you're not yet registered</a> <br></br>
+      <a href="/staffforgotpassword" style={{color:'#geg', fontSize:'17px', fontWeight:'bold'}}>Forgot Password</a> <br></br>
       
       
     </Form>

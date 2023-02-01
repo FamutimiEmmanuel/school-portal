@@ -9,35 +9,35 @@ const Student = require('../models/Students');
 const Staff = require('../models/Staffs');
 const adminauth = require('../middleware/adminauth');
 
-const nodemailer = require('nodemailer');
-const {google} = require('googleapis');
+// const nodemailer = require('nodemailer');
+// const {google} = require('googleapis');
 // const sendgridTransport = require('nodemailer-sendgrid-transport')
 
-const OAuth2 = google.auth.OAuth2;
+// const OAuth2 = google.auth.OAuth2;
 
-const myOAuth2Client = new OAuth2(
-  '56440586722-3t6shacl45okg4rf8ei6oa0ata2482ui.apps.googleusercontent.com',
-  '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',
-  'https://developers.google.com/oauthplayground'
-)
+// const myOAuth2Client = new OAuth2(
+//   '56440586722-3t6shacl45okg4rf8ei6oa0ata2482ui.apps.googleusercontent.com',
+//   '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',
+//   'https://developers.google.com/oauthplayground'
+// )
 
-myOAuth2Client.setCredentials({
-  refresh_token:'1//04Kj26lfqzqNhCgYIARAAGAQSNwF-L9IrORTrsd8wQwrqwKHyFRGMWL8qlrtNwq7_bU5_SthxAVZRi39ekgyKGg7OXrYHQ0koG5I'
-})
+// myOAuth2Client.setCredentials({
+//   refresh_token:'1//04Kj26lfqzqNhCgYIARAAGAQSNwF-L9IrORTrsd8wQwrqwKHyFRGMWL8qlrtNwq7_bU5_SthxAVZRi39ekgyKGg7OXrYHQ0koG5I'
+// })
 
-const myAccessToken = myOAuth2Client.getAccessToken()
+// const myAccessToken = myOAuth2Client.getAccessToken()
 
-const transporter = nodemailer.createTransport({
-  service:'gmail',
-  auth: {
-      type:'OAuth2',
-      user:'olamide.famutimi@gmail.com',
-      clientId:'56440586722-3t6shacl45okg4rf8ei6oa0ata2482ui.apps.googleusercontent.com',
-      clientSecret:'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',
-      refreshToken:'1//04Kj26lfqzqNhCgYIARAAGAQSNwF-L9IrORTrsd8wQwrqwKHyFRGMWL8qlrtNwq7_bU5_SthxAVZRi39ekgyKGg7OXrYHQ0koG5I',
-      accessToken:myAccessToken
-  }
-});
+// const transporter = nodemailer.createTransport({
+//   service:'gmail',
+//   auth: {
+//       type:'OAuth2',
+//       user:'olamide.famutimi@gmail.com',
+//       clientId:'56440586722-3t6shacl45okg4rf8ei6oa0ata2482ui.apps.googleusercontent.com',
+//       clientSecret:'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',
+//       refreshToken:'1//04Kj26lfqzqNhCgYIARAAGAQSNwF-L9IrORTrsd8wQwrqwKHyFRGMWL8qlrtNwq7_bU5_SthxAVZRi39ekgyKGg7OXrYHQ0koG5I',
+//       accessToken:myAccessToken
+//   }
+// });
 
 
 router.post('/api/admin/register', 
@@ -69,13 +69,13 @@ router.post('/api/admin/register',
       admin.password = await bcrypt.hash(password, salt);
       await admin.save();
 
-      transporter.sendMail({
-        from: "no-reply@emmanuel famutimi high school.com",
-        to: admin.email,
-        subject:"signup success",
-        text: 'Glad to have you here',
-        html: "<h1>welcome to our school</h1>"
-                  })
+      // transporter.sendMail({
+      //   from: "no-reply@emmanuel famutimi high school.com",
+      //   to: admin.email,
+      //   subject:"signup success",
+      //   text: 'Glad to have you here',
+      //   html: "<h1>welcome to our school</h1>"
+      //             })
 
       const payload = {
         admin: {
@@ -173,15 +173,15 @@ router.post('/api/admin/forgotpassword',(req,res)=>{
           admin.resetToken = token
           admin.expireToken = Date.now() + 3600000
           admin.save().then((result)=>{
-              transporter.sendMail({
-                  to:admin.email,
-                  from:"no-replay@ emmanuel.com",
-                  subject:"password reset",
-                  html:`
-                  <p>You requested for password reset</p>
-                  <h5>click in this <a href="http://emmanuel-school-portal.herokuapp.com/adminresetpassword/${token}">link</a> to reset password</h5>
-                  `
-              })
+              // transporter.sendMail({
+              //     to:admin.email,
+              //     from:"no-replay@ emmanuel.com",
+              //     subject:"password reset",
+              //     html:`
+              //     <p>You requested for password reset</p>
+              //     <h5>click in this <a href="http://emmanuel-school-portal.herokuapp.com/adminresetpassword/${token}">link</a> to reset password</h5>
+              //     `
+              // })
               
               res.json({message:"check your email"})
           })

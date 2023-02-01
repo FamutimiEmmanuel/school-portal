@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.41952b55.css",
+    "main.js": "/static/js/main.64814780.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/classteacher.jpg": "/static/media/classteacher.9584edb23cda79966be6.jpg",
+    "static/media/childrenlibrary.jpg": "/static/media/childrenlibrary.05741a00bd38422e11c3.jpg",
+    "static/media/sport.jpg": "/static/media/sport.b5258fdbbcb7cb92d375.jpg",
+    "static/media/childrenreading.jpg": "/static/media/childrenreading.d11829f686f075554b08.jpg",
+    "static/media/null.jpg": "/static/media/null.913d0151ebac124a788a.jpg",
+    "static/media/staffroom.jpg": "/static/media/staffroom.2aa1122ba08a1c51f76f.jpg",
+    "static/media/book.jpg": "/static/media/book.133814d92ea765313737.jpg",
+    "index.html": "/index.html",
+    "main.41952b55.css.map": "/static/css/main.41952b55.css.map",
+    "main.64814780.js.map": "/static/js/main.64814780.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41952b55.css",
+    "static/js/main.64814780.js"
+  ]
+}

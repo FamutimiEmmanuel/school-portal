@@ -9,7 +9,7 @@ const studentauth = require('../middleware/studentauth');
 const crypto = require('crypto')
 const nodemailer = require('nodemailer');
 const {google} = require('googleapis');
-const sendgridTransport = require('nodemailer-sendgrid-transport')
+// const sendgridTransport = require('nodemailer-sendgrid-transport')
 
 const OAuth2 = google.auth.OAuth2;
 

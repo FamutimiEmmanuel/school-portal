@@ -11,7 +11,7 @@ const adminauth = require('../middleware/adminauth');
 
 const nodemailer = require('nodemailer');
 const {google} = require('googleapis');
-const sendgridTransport = require('nodemailer-sendgrid-transport')
+// const sendgridTransport = require('nodemailer-sendgrid-transport')
 
 const OAuth2 = google.auth.OAuth2;
 

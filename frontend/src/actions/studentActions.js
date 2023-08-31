@@ -75,7 +75,7 @@ import {
   export const getStudents = () => async dispatch => {
     try {
   
-      const res = await axios.get('http://localhost:5000/api/stuents');
+      const res = await axios.get('http://localhost:5000/api/students');
   
       dispatch({
         type: GET_STUDENTS,
